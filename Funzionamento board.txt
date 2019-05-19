@@ -1,0 +1,48 @@
+CubeMX su Windows ti genera del codice da usare per le periferiche, bello funzionante.
+Scrivi il codice usando la libreria HAL.
+Il CubeMX ti genera un makefile per fortuna.
+
+Da Linux faccio make e quello risolve tutto (lì ho installato gcc per arm senza problemi).
+
+Per flashare, ho sì installato stlink, ma in questa board puoi caricare il file dentro tipo chiavetta e stavolta FUNZIONA per davvero.
+
+sudo screen /dev/ttyACM0 115200
+
+
+
+libkeccak l'ho presa da qui, serve xsltproc
+    git clone https://github.com/gvanas/KeccakCodePackage.git
+    make | grep libkeccak
+    make .../libkeccak.a (NESSUNO FUNZIONA PER ARM)
+Qui ti avrà generato libkeccak.a e la cartella degli header
+
+
+
+Compila libkeccak
+    Dentro ToTargetMakefile.xsl modifica:
+        MAKE ?= gmake
+        CC = arm-none-eabi-gcc
+        AR = arm-none-eabi-ar
+    Dentro build/Makefile expanded modifica:
+        <h>lib/common/brg_endian.h</h>
+        <gcc>-fomit-frame-pointer</gcc>
+        <gcc>-O2</gcc>
+        <gcc>-g0</gcc>
+        <gcc>-march=armv7-m</gcc>
+        <gcc>-mthumb</gcc>
+        <gcc>-mfpu=fpv4-sp-d16</gcc>
+        <gcc>-mfloat-abi=softfp</gcc> 
+    Dentro libkeccak.a.target ho cancellato beatamente i moduli che non fanno compilare e vaffanculo
+        E non dovrebbe dare problemi perche' SHA-3 non li usa
+Modificare Makefile per LEDAcrypt: inserisci GCC per ARM, flag per FPU, -std=c11
+Compila LEDAcrypt
+    Purtroppo non funziona la libreria time.h (non prende la funzione clock_gettime...)
+
+
+
+
+openocd -f tcl/board/st_nucleo_f4.cfg
+
+target remote :3333
+monitor reset halt
+
