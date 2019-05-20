@@ -1,5 +1,7 @@
 /*
-Implementation by Ronny Van Keer, hereby denoted as "the implementer".
+Implementation by the Keccak Team, namely, Guido Bertoni, Joan Daemen,
+Michaël Peeters, Gilles Van Assche and Ronny Van Keer,
+hereby denoted as "the implementer".
 
 For more information, feedback or questions, please refer to our website:
 https://keccak.team/
@@ -16,15 +18,17 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_800_SnP_h_
 #define _KeccakP_800_SnP_h_
 
-#define KeccakP800_implementation      "32-bit optimized ARM assembler implementation"
+#define KeccakP800_implementation      "32-bit reference implementation"
 #define KeccakP800_stateSizeInBytes    100
 #define KeccakP800_stateAlignment      4
 
-/* void KeccakP800_StaticInitialize( void ); */
+#ifdef KeccakReference
+void KeccakP800_StaticInitialize( void );
+#else
 #define KeccakP800_StaticInitialize()
+#endif
 void KeccakP800_Initialize(void *state);
-/* void KeccakP800_AddByte(void *state, unsigned char data, unsigned int offset); */
-#define KeccakP800_AddByte(argS, argData, argOffset)    ((unsigned char*)argS)[argOffset] ^= (argData)
+void KeccakP800_AddByte(void *state, unsigned char data, unsigned int offset);
 void KeccakP800_AddBytes(void *state, const unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP800_OverwriteBytes(void *state, const unsigned char *data, unsigned int offset, unsigned int length);
 void KeccakP800_OverwriteWithZeroes(void *state, unsigned int byteCount);

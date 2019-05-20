@@ -12,7 +12,8 @@ http://creativecommons.org/publicdomain/zero/1.0/
 #ifndef _KetCommon_h_
 #define _KetCommon_h_
 
-/*  Ketje frame bits */
+#include <string.h>
+
 #define FRAMEBITSEMPTY  0x01
 #define FRAMEBITS0      0x02
 #define FRAMEBITS00     0x04

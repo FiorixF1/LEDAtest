@@ -94,18 +94,27 @@ int main(void)
   MX_GPIO_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  char *test = "I'm alive\n";
+  char *test = "I'm alive\n\r";
   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
   
-  char *msg = "Hello Nucleo Fun!\n\r";
+  char msg[22] = "Hello Nucleo Fun!\n\r";
+  char *PAIR = "Generating keys...\n\r";
+  char *ENC = "Encrypting...\n\r";
+  char *ERR_PAIR = "Error in key_pair\n\r";
+  char *ERR_ENC = "Error in key_enc\n\r";
   int ans;
 
   unsigned char *pk;
   unsigned char *sk;
+  
+  HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFF);
   ans = crypto_kem_keypair(pk, sk);
-
-  unsigned char *ss = "wewewewe";  
+  if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
+  
+  unsigned char ss[9] = "wewewewe";
+  HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
   ans = crypto_kem_enc(msg, ss, pk);
+  if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
   
   /* USER CODE END 2 */
 

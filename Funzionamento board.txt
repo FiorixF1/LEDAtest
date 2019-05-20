@@ -10,10 +10,10 @@ sudo screen /dev/ttyACM0 115200
 
 
 
-libkeccak l'ho presa da qui, serve xsltproc
+libkeccak l'ho preso da qui, serve xsltproc
     git clone https://github.com/gvanas/KeccakCodePackage.git
     make | grep libkeccak
-    make .../libkeccak.a (NESSUNO FUNZIONA PER ARM)
+    make ARMv7M/libkeccak.a (MA DA GROSSI PROBLEMI)
 Qui ti avrà generato libkeccak.a e la cartella degli header
 
 
@@ -23,7 +23,7 @@ Compila libkeccak
         MAKE ?= gmake
         CC = arm-none-eabi-gcc
         AR = arm-none-eabi-ar
-    Dentro build/Makefile expanded modifica:
+    Dentro bin/.build/Makefile.expanded modifica:
         <h>lib/common/brg_endian.h</h>
         <gcc>-fomit-frame-pointer</gcc>
         <gcc>-O2</gcc>
@@ -34,6 +34,8 @@ Compila libkeccak
         <gcc>-mfloat-abi=softfp</gcc> 
     Dentro libkeccak.a.target ho cancellato beatamente i moduli che non fanno compilare e vaffanculo
         E non dovrebbe dare problemi perche' SHA-3 non li usa
+    COMPILA CON reference/libkeccak.a, quella non dovrebbe dare problemi perche' sostanzialmente compila senza usar ei file ottimizzati.
+    In quel caso devi solo mettere in giro le flag giuste e il compilatore ARM, poi funziona tutto.
 Modificare Makefile per LEDAcrypt: inserisci GCC per ARM, flag per FPU, -std=c11
 Compila LEDAcrypt
     Purtroppo non funziona la libreria time.h (non prende la funzione clock_gettime...)

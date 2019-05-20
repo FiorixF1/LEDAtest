@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccvv82Xp.s 			page 1
+ARM GAS  /tmp/ccxNoiuJ.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
-ARM GAS  /tmp/ccvv82Xp.s 			page 2
+ARM GAS  /tmp/ccxNoiuJ.s 			page 2
 
 
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @defgroup PWR PWR
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
-ARM GAS  /tmp/ccvv82Xp.s 			page 3
+ARM GAS  /tmp/ccxNoiuJ.s 			page 3
 
 
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief Deinitializes the HAL PWR peripheral registers to their default reset values.
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
   65 0002 014B     		ldr	r3, .L5
   66 0004 1A60     		str	r2, [r3]
   67 0006 7047     		bx	lr
-ARM GAS  /tmp/ccvv82Xp.s 			page 4
+ARM GAS  /tmp/ccxNoiuJ.s 			page 4
 
 
   68              	.L6:
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  126:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /** @defgroup PWR_Exported_Functions_Group2 Peripheral Control functions 
  127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *  @brief Low Power modes configuration functions 
  128:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   *
-ARM GAS  /tmp/ccvv82Xp.s 			page 5
+ARM GAS  /tmp/ccxNoiuJ.s 			page 5
 
 
  129:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** @verbatim
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       In Stop mode, all clocks in the 1.2V domain are stopped, the PLL, the HSI,
  184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       and the HSE RC oscillators are disabled. Internal SRAM and register contents 
  185:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       are preserved.
-ARM GAS  /tmp/ccvv82Xp.s 			page 6
+ARM GAS  /tmp/ccxNoiuJ.s 			page 6
 
 
  186:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****       The voltage regulator can be configured either in normal or low-power mode.
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  240:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @{
  241:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
  242:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
-ARM GAS  /tmp/ccvv82Xp.s 			page 7
+ARM GAS  /tmp/ccxNoiuJ.s 			page 7
 
 
  243:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  267:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Configure interrupt mode */
  268:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   if((sConfigPVD->Mode & PVD_MODE_IT) == PVD_MODE_IT)
  138              		.loc 1 268 0
-ARM GAS  /tmp/ccvv82Xp.s 			page 8
+ARM GAS  /tmp/ccxNoiuJ.s 			page 8
 
 
  139 0030 4368     		ldr	r3, [r0, #4]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  174 0070 D368     		ldr	r3, [r2, #12]
  175 0072 43F48033 		orr	r3, r3, #65536
  176 0076 D360     		str	r3, [r2, #12]
-ARM GAS  /tmp/ccvv82Xp.s 			page 9
+ARM GAS  /tmp/ccxNoiuJ.s 			page 9
 
 
  177              	.L10:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  303:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
  304:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** void HAL_PWR_DisablePVD(void)
  305:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
-ARM GAS  /tmp/ccvv82Xp.s 			page 10
+ARM GAS  /tmp/ccxNoiuJ.s 			page 10
 
 
  220              		.loc 1 305 0
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  257 0008 7047     		bx	lr
  258              	.L25:
  259 000a 00BF     		.align	2
-ARM GAS  /tmp/ccvv82Xp.s 			page 11
+ARM GAS  /tmp/ccxNoiuJ.s 			page 11
 
 
  260              	.L24:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  300              	.LFB138:
  343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** }
  344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   
-ARM GAS  /tmp/ccvv82Xp.s 			page 12
+ARM GAS  /tmp/ccxNoiuJ.s 			page 12
 
 
  345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** /**
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  321              	.L30:
  379:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   }
  380:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   else
-ARM GAS  /tmp/ccvv82Xp.s 			page 13
+ARM GAS  /tmp/ccxNoiuJ.s 			page 13
 
 
  381:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   {
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  408:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** void HAL_PWR_EnterSTOPMode(uint32_t Regulator, uint8_t STOPEntry)
  409:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** {
  351              		.loc 1 409 0
-ARM GAS  /tmp/ccvv82Xp.s 			page 14
+ARM GAS  /tmp/ccxNoiuJ.s 			page 14
 
 
  352              		.cfi_startproc
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  385 0020 20BF     		wfe
  386              	@ 0 "" 2
  431:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****     __WFE();
-ARM GAS  /tmp/ccvv82Xp.s 			page 15
+ARM GAS  /tmp/ccxNoiuJ.s 			page 15
 
 
  387              		.loc 1 431 0
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  424 0008 1360     		str	r3, [r2]
  451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** 
  452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   /* Set SLEEPDEEP bit of Cortex System Control Register */
-ARM GAS  /tmp/ccvv82Xp.s 			page 16
+ARM GAS  /tmp/ccxNoiuJ.s 			page 16
 
 
  453:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   SET_BIT(SCB->SCR, ((uint32_t)SCB_SCR_SLEEPDEEP_Msk));
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  482:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @brief  PWR PVD interrupt callback
  483:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   * @retval None
  484:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c ****   */
-ARM GAS  /tmp/ccvv82Xp.s 			page 17
+ARM GAS  /tmp/ccxNoiuJ.s 			page 17
 
 
  485:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c **** __weak void HAL_PWR_PVDCallback(void)
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  502              		.global	HAL_PWR_EnableSleepOnExit
  503              		.thumb
  504              		.thumb_func
-ARM GAS  /tmp/ccvv82Xp.s 			page 18
+ARM GAS  /tmp/ccxNoiuJ.s 			page 18
 
 
  506              	HAL_PWR_EnableSleepOnExit:
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  535              		.cfi_startproc
  536              		@ args = 0, pretend = 0, frame = 0
  537              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccvv82Xp.s 			page 19
+ARM GAS  /tmp/ccxNoiuJ.s 			page 19
 
 
  538              		@ link register save eliminated.
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  581              		.thumb
  582              		.thumb_func
  584              	HAL_PWR_DisableSEVOnPend:
-ARM GAS  /tmp/ccvv82Xp.s 			page 20
+ARM GAS  /tmp/ccxNoiuJ.s 			page 20
 
 
  585              	.LFB146:
@@ -1179,61 +1179,61 @@ ARM GAS  /tmp/ccvv82Xp.s 			page 1
  609              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
  610              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  611              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"
-ARM GAS  /tmp/ccvv82Xp.s 			page 21
+ARM GAS  /tmp/ccxNoiuJ.s 			page 21
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_pwr.c
-     /tmp/ccvv82Xp.s:20     .text.HAL_PWR_DeInit:0000000000000000 $t
-     /tmp/ccvv82Xp.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
-     /tmp/ccvv82Xp.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
-     /tmp/ccvv82Xp.s:51     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
-     /tmp/ccvv82Xp.s:56     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
-     /tmp/ccvv82Xp.s:71     .text.HAL_PWR_EnableBkUpAccess:0000000000000008 $d
-     /tmp/ccvv82Xp.s:76     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
-     /tmp/ccvv82Xp.s:81     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
-     /tmp/ccvv82Xp.s:96     .text.HAL_PWR_DisableBkUpAccess:0000000000000008 $d
-     /tmp/ccvv82Xp.s:101    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
-     /tmp/ccvv82Xp.s:106    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
-     /tmp/ccvv82Xp.s:182    .text.HAL_PWR_ConfigPVD:000000000000007c $d
-     /tmp/ccvv82Xp.s:188    .text.HAL_PWR_EnablePVD:0000000000000000 $t
-     /tmp/ccvv82Xp.s:193    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
-     /tmp/ccvv82Xp.s:208    .text.HAL_PWR_EnablePVD:0000000000000008 $d
-     /tmp/ccvv82Xp.s:213    .text.HAL_PWR_DisablePVD:0000000000000000 $t
-     /tmp/ccvv82Xp.s:218    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
-     /tmp/ccvv82Xp.s:233    .text.HAL_PWR_DisablePVD:0000000000000008 $d
-     /tmp/ccvv82Xp.s:238    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
-     /tmp/ccvv82Xp.s:243    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
-     /tmp/ccvv82Xp.s:261    .text.HAL_PWR_EnableWakeUpPin:000000000000000c $d
-     /tmp/ccvv82Xp.s:266    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
-     /tmp/ccvv82Xp.s:271    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
-     /tmp/ccvv82Xp.s:289    .text.HAL_PWR_DisableWakeUpPin:000000000000000c $d
-     /tmp/ccvv82Xp.s:294    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
-     /tmp/ccvv82Xp.s:299    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
-     /tmp/ccvv82Xp.s:339    .text.HAL_PWR_EnterSLEEPMode:000000000000001c $d
-     /tmp/ccvv82Xp.s:344    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
-     /tmp/ccvv82Xp.s:349    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
-     /tmp/ccvv82Xp.s:402    .text.HAL_PWR_EnterSTOPMode:0000000000000030 $d
-     /tmp/ccvv82Xp.s:408    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
-     /tmp/ccvv82Xp.s:413    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
-     /tmp/ccvv82Xp.s:439    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
-     /tmp/ccvv82Xp.s:445    .text.HAL_PWR_PVDCallback:0000000000000000 $t
-     /tmp/ccvv82Xp.s:450    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
-     /tmp/ccvv82Xp.s:462    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
-     /tmp/ccvv82Xp.s:467    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
-     /tmp/ccvv82Xp.s:496    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
-     /tmp/ccvv82Xp.s:501    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
-     /tmp/ccvv82Xp.s:506    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
-     /tmp/ccvv82Xp.s:522    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
-     /tmp/ccvv82Xp.s:527    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
-     /tmp/ccvv82Xp.s:532    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
-     /tmp/ccvv82Xp.s:548    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
-     /tmp/ccvv82Xp.s:553    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
-     /tmp/ccvv82Xp.s:558    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
-     /tmp/ccvv82Xp.s:574    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
-     /tmp/ccvv82Xp.s:579    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
-     /tmp/ccvv82Xp.s:584    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
-     /tmp/ccvv82Xp.s:600    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
+     /tmp/ccxNoiuJ.s:20     .text.HAL_PWR_DeInit:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:25     .text.HAL_PWR_DeInit:0000000000000000 HAL_PWR_DeInit
+     /tmp/ccxNoiuJ.s:46     .text.HAL_PWR_DeInit:0000000000000014 $d
+     /tmp/ccxNoiuJ.s:51     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:56     .text.HAL_PWR_EnableBkUpAccess:0000000000000000 HAL_PWR_EnableBkUpAccess
+     /tmp/ccxNoiuJ.s:71     .text.HAL_PWR_EnableBkUpAccess:0000000000000008 $d
+     /tmp/ccxNoiuJ.s:76     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:81     .text.HAL_PWR_DisableBkUpAccess:0000000000000000 HAL_PWR_DisableBkUpAccess
+     /tmp/ccxNoiuJ.s:96     .text.HAL_PWR_DisableBkUpAccess:0000000000000008 $d
+     /tmp/ccxNoiuJ.s:101    .text.HAL_PWR_ConfigPVD:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:106    .text.HAL_PWR_ConfigPVD:0000000000000000 HAL_PWR_ConfigPVD
+     /tmp/ccxNoiuJ.s:182    .text.HAL_PWR_ConfigPVD:000000000000007c $d
+     /tmp/ccxNoiuJ.s:188    .text.HAL_PWR_EnablePVD:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:193    .text.HAL_PWR_EnablePVD:0000000000000000 HAL_PWR_EnablePVD
+     /tmp/ccxNoiuJ.s:208    .text.HAL_PWR_EnablePVD:0000000000000008 $d
+     /tmp/ccxNoiuJ.s:213    .text.HAL_PWR_DisablePVD:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:218    .text.HAL_PWR_DisablePVD:0000000000000000 HAL_PWR_DisablePVD
+     /tmp/ccxNoiuJ.s:233    .text.HAL_PWR_DisablePVD:0000000000000008 $d
+     /tmp/ccxNoiuJ.s:238    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:243    .text.HAL_PWR_EnableWakeUpPin:0000000000000000 HAL_PWR_EnableWakeUpPin
+     /tmp/ccxNoiuJ.s:261    .text.HAL_PWR_EnableWakeUpPin:000000000000000c $d
+     /tmp/ccxNoiuJ.s:266    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:271    .text.HAL_PWR_DisableWakeUpPin:0000000000000000 HAL_PWR_DisableWakeUpPin
+     /tmp/ccxNoiuJ.s:289    .text.HAL_PWR_DisableWakeUpPin:000000000000000c $d
+     /tmp/ccxNoiuJ.s:294    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:299    .text.HAL_PWR_EnterSLEEPMode:0000000000000000 HAL_PWR_EnterSLEEPMode
+     /tmp/ccxNoiuJ.s:339    .text.HAL_PWR_EnterSLEEPMode:000000000000001c $d
+     /tmp/ccxNoiuJ.s:344    .text.HAL_PWR_EnterSTOPMode:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:349    .text.HAL_PWR_EnterSTOPMode:0000000000000000 HAL_PWR_EnterSTOPMode
+     /tmp/ccxNoiuJ.s:402    .text.HAL_PWR_EnterSTOPMode:0000000000000030 $d
+     /tmp/ccxNoiuJ.s:408    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:413    .text.HAL_PWR_EnterSTANDBYMode:0000000000000000 HAL_PWR_EnterSTANDBYMode
+     /tmp/ccxNoiuJ.s:439    .text.HAL_PWR_EnterSTANDBYMode:0000000000000018 $d
+     /tmp/ccxNoiuJ.s:445    .text.HAL_PWR_PVDCallback:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:450    .text.HAL_PWR_PVDCallback:0000000000000000 HAL_PWR_PVDCallback
+     /tmp/ccxNoiuJ.s:462    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:467    .text.HAL_PWR_PVD_IRQHandler:0000000000000000 HAL_PWR_PVD_IRQHandler
+     /tmp/ccxNoiuJ.s:496    .text.HAL_PWR_PVD_IRQHandler:000000000000001c $d
+     /tmp/ccxNoiuJ.s:501    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:506    .text.HAL_PWR_EnableSleepOnExit:0000000000000000 HAL_PWR_EnableSleepOnExit
+     /tmp/ccxNoiuJ.s:522    .text.HAL_PWR_EnableSleepOnExit:000000000000000c $d
+     /tmp/ccxNoiuJ.s:527    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:532    .text.HAL_PWR_DisableSleepOnExit:0000000000000000 HAL_PWR_DisableSleepOnExit
+     /tmp/ccxNoiuJ.s:548    .text.HAL_PWR_DisableSleepOnExit:000000000000000c $d
+     /tmp/ccxNoiuJ.s:553    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:558    .text.HAL_PWR_EnableSEVOnPend:0000000000000000 HAL_PWR_EnableSEVOnPend
+     /tmp/ccxNoiuJ.s:574    .text.HAL_PWR_EnableSEVOnPend:000000000000000c $d
+     /tmp/ccxNoiuJ.s:579    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 $t
+     /tmp/ccxNoiuJ.s:584    .text.HAL_PWR_DisableSEVOnPend:0000000000000000 HAL_PWR_DisableSEVOnPend
+     /tmp/ccxNoiuJ.s:600    .text.HAL_PWR_DisableSEVOnPend:000000000000000c $d
                      .debug_frame:0000000000000010 $d
 
 NO UNDEFINED SYMBOLS

@@ -1,5 +1,7 @@
 /*
-Implementation by Ronny Van Keer, hereby denoted as "the implementer".
+Implementation by the Keccak Team, namely, Guido Bertoni, Joan Daemen,
+Michaël Peeters, Gilles Van Assche and Ronny Van Keer,
+hereby denoted as "the implementer".
 
 For more information, feedback or questions, please refer to our website:
 https://keccak.team/
@@ -16,12 +18,15 @@ Please refer to SnP-documentation.h for more details.
 #ifndef _KeccakP_1600_SnP_h_
 #define _KeccakP_1600_SnP_h_
 
-#define KeccakP1600_implementation      "32-bit bit-interleaved optimized ARM assembler implementation"
+#define KeccakP1600_implementation      "64-bit reference implementation"
 #define KeccakP1600_stateSizeInBytes    200
-#define KeccakP1600_stateAlignment      4
+#define KeccakP1600_stateAlignment      8
 
-/* void KeccakP1600_StaticInitialize( void ); */
+#ifdef KeccakReference
+void KeccakP1600_StaticInitialize( void );
+#else
 #define KeccakP1600_StaticInitialize()
+#endif
 void KeccakP1600_Initialize(void *state);
 void KeccakP1600_AddByte(void *state, unsigned char data, unsigned int offset);
 void KeccakP1600_AddBytes(void *state, const unsigned char *data, unsigned int offset, unsigned int length);

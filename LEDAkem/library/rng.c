@@ -38,7 +38,7 @@
 #include <stdlib.h> // void srand(unsigned int seed); int rand(void); RAND_MAX
 #include <string.h> // void *memset(void *s, int c, size_t n);
 #define __USE_POSIX199309
-//#include <time.h> // struct timespec; clock_gettime(...); CLOCK_REALTIME
+#include <time.h> // struct timespec; clock_gettime(...); CLOCK_REALTIME
 
 #include "aes256.h"
 #include "qc_ldpc_parameters.h"
@@ -56,10 +56,9 @@ void initialize_pseudo_random_generator_seed(int ac, char *av[])
    if (ac == 2)
       srand(atoi(av[1]));
    else {
-      //struct timespec seedValue;
-      //clock_gettime(CLOCK_REALTIME, &seedValue);
-      //srand(seedValue.tv_nsec);
-      srand(0);
+      struct timespec seedValue;
+      clock_gettime(CLOCK_REALTIME, &seedValue);
+      srand(seedValue.tv_nsec);
    } // end else-if
    unsigned char pseudo_entropy[48];
    for (int i=0; i< 48; i++) pseudo_entropy[i] = rand() & 0xff;
