@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include <string.h>
 #include "api.h"
 /* USER CODE END Includes */
 
@@ -97,11 +98,11 @@ int main(void)
   char *test = "I'm alive\n\r";
   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
   
-  char msg[22] = "Hello Nucleo Fun!\n\r";
+  char msg[CRYPTO_CIPHERTEXTBYTES] = "Hello Nucleo Fun!\n\r";
   char *PAIR = "Generating keys...\n\r";
   char *ENC = "Encrypting...\n\r";
-  char *ERR_PAIR = "Error in key_pair\n\r";
-  char *ERR_ENC = "Error in key_enc\n\r";
+  char *ERR_PAIR = "Error in keypair\n\r";
+  char *ERR_ENC = "Error in enc\n\r";
   int ans;
 
   unsigned char *pk;
@@ -116,6 +117,8 @@ int main(void)
   ans = crypto_kem_enc(msg, ss, pk);
   if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
   
+  HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
+  
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -125,7 +128,6 @@ int main(void)
     /* USER CODE END WHILE */
     HAL_GPIO_TogglePin(Ld2_GPIO_Port,Ld2_Pin); //Toggle LED
     HAL_Delay(1000); //Delay 1 Seconds
-    HAL_UART_Transmit(&huart2, (uint8_t*)msg, strlen(msg), 0xFFFF);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

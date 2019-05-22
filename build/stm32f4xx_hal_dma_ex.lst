@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccH1870c.s 			page 1
+ARM GAS  /tmp/ccHFpyPr.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   *
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * the "License"; You may not use this file except in compliance with the
-ARM GAS  /tmp/ccH1870c.s 			page 2
+ARM GAS  /tmp/ccHFpyPr.s 			page 2
 
 
   33:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * License. You may obtain a copy of the License at:
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * @{
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   */
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
-ARM GAS  /tmp/ccH1870c.s 			page 3
+ARM GAS  /tmp/ccHFpyPr.s 			page 3
 
 
   90:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** /**
  146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * @brief  Starts the multi_buffer DMA Transfer with interrupt enabled.
-ARM GAS  /tmp/ccH1870c.s 			page 4
+ARM GAS  /tmp/ccHFpyPr.s 			page 4
 
 
  147:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * @param  hdma       pointer to a DMA_HandleTypeDef structure that contains
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_FE_FLAG_INDEX(hdma));
  202:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
  203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     /* Enable Common interrupts*/
-ARM GAS  /tmp/ccH1870c.s 			page 5
+ARM GAS  /tmp/ccHFpyPr.s 			page 5
 
 
  204:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     hdma->Instance->CR  |= DMA_IT_TC | DMA_IT_TE | DMA_IT_DME;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  258:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   */
  259:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
  260:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** /**
-ARM GAS  /tmp/ccH1870c.s 			page 6
+ARM GAS  /tmp/ccHFpyPr.s 			page 6
 
 
  261:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   * @}
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
   52 0014 03E0     		b	.L1
   53              	.LVL3:
   54              	.L2:
-ARM GAS  /tmp/ccH1870c.s 			page 7
+ARM GAS  /tmp/ccHFpyPr.s 			page 7
 
 
  290:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****   }
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
   97              		.loc 1 111 0
   98 0008 4FF48073 		mov	r3, #256
   99              	.LVL7:
-ARM GAS  /tmp/ccH1870c.s 			page 8
+ARM GAS  /tmp/ccHFpyPr.s 			page 8
 
 
  100 000c 4365     		str	r3, [r0, #84]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  144              		.loc 1 103 0
  145 0052 0020     		movs	r0, #0
  146 0054 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  /tmp/ccH1870c.s 			page 9
+ARM GAS  /tmp/ccHFpyPr.s 			page 9
 
 
  147              	.LVL14:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  195              	.LVL21:
  196 0010 38BD     		pop	{r3, r4, r5, pc}
  197              	.LVL22:
-ARM GAS  /tmp/ccH1870c.s 			page 10
+ARM GAS  /tmp/ccHFpyPr.s 			page 10
 
 
  198              	.L13:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  241 0050 2868     		ldr	r0, [r5]
  242 0052 40F48020 		orr	r0, r0, #262144
  243 0056 2860     		str	r0, [r5]
-ARM GAS  /tmp/ccH1870c.s 			page 11
+ARM GAS  /tmp/ccHFpyPr.s 			page 11
 
 
  191:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  287 00a4 02F58062 		add	r2, r2, #1024
  288 00a8 9342     		cmp	r3, r2
  289 00aa 1ED0     		beq	.L294
-ARM GAS  /tmp/ccH1870c.s 			page 12
+ARM GAS  /tmp/ccHFpyPr.s 			page 12
 
 
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  339              	.L288:
  340 010a 2023     		movs	r3, #32
  341 010c 00E0     		b	.L19
-ARM GAS  /tmp/ccH1870c.s 			page 13
+ARM GAS  /tmp/ccHFpyPr.s 			page 13
 
 
  342              	.L287:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
  386              		.loc 1 197 0 discriminator 67
  387 015a A2F58962 		sub	r2, r2, #1096
-ARM GAS  /tmp/ccH1870c.s 			page 14
+ARM GAS  /tmp/ccHFpyPr.s 			page 14
 
 
  388 015e 9342     		cmp	r3, r2
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  438              	.L299:
  439 01bc 2023     		movs	r3, #32
  440              	.L33:
-ARM GAS  /tmp/ccH1870c.s 			page 15
+ARM GAS  /tmp/ccHFpyPr.s 			page 15
 
 
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  484 020c 9342     		cmp	r3, r2
  485 020e 17D0     		beq	.L319
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
-ARM GAS  /tmp/ccH1870c.s 			page 16
+ARM GAS  /tmp/ccHFpyPr.s 			page 16
 
 
  486              		.loc 1 197 0 discriminator 120
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
  537              		.loc 1 197 0 discriminator 151
  538 026c 2D4A     		ldr	r2, .L528+16
-ARM GAS  /tmp/ccH1870c.s 			page 17
+ARM GAS  /tmp/ccHFpyPr.s 			page 17
 
 
  539 026e D360     		str	r3, [r2, #12]
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  582              		.loc 1 197 0 discriminator 171
  583 02c0 A2F56872 		sub	r2, r2, #928
  584 02c4 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccH1870c.s 			page 18
+ARM GAS  /tmp/ccHFpyPr.s 			page 18
 
 
  585 02c6 09D0     		beq	.L333
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  637              	.L59:
  197:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_HT_FLAG_INDEX(hdma));
  638              		.loc 1 197 0 discriminator 200
-ARM GAS  /tmp/ccH1870c.s 			page 19
+ARM GAS  /tmp/ccHFpyPr.s 			page 19
 
 
  639 032e AC4A     		ldr	r2, .L530
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_TE_FLAG_INDEX(hdma));
  683              		.loc 1 198 0 discriminator 19
  684 0382 02F58062 		add	r2, r2, #1024
-ARM GAS  /tmp/ccH1870c.s 			page 20
+ARM GAS  /tmp/ccHFpyPr.s 			page 20
 
 
  685 0386 9342     		cmp	r3, r2
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  735 03de 824A     		ldr	r2, .L530+8
  736 03e0 D360     		str	r3, [r2, #12]
  737 03e2 0CE1     		b	.L84
-ARM GAS  /tmp/ccH1870c.s 			page 21
+ARM GAS  /tmp/ccHFpyPr.s 			page 21
 
 
  738              	.L71:
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  781 0434 9342     		cmp	r3, r2
  782 0436 10D0     		beq	.L356
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_TE_FLAG_INDEX(hdma));
-ARM GAS  /tmp/ccH1870c.s 			page 22
+ARM GAS  /tmp/ccHFpyPr.s 			page 22
 
 
  783              		.loc 1 198 0 discriminator 71
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  834              	.L85:
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_TE_FLAG_INDEX(hdma));
  835              		.loc 1 198 0 discriminator 52
-ARM GAS  /tmp/ccH1870c.s 			page 23
+ARM GAS  /tmp/ccHFpyPr.s 			page 23
 
 
  836 0492 574A     		ldr	r2, .L530+16
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  879              		.loc 1 198 0 discriminator 122
  880 04e6 A2F56872 		sub	r2, r2, #928
  881 04ea 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccH1870c.s 			page 24
+ARM GAS  /tmp/ccHFpyPr.s 			page 24
 
 
  882 04ec 09D0     		beq	.L369
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  932 0540 2C4A     		ldr	r2, .L530+20
  933 0542 9342     		cmp	r3, r2
  934 0544 58D0     		beq	.L371
-ARM GAS  /tmp/ccH1870c.s 			page 25
+ARM GAS  /tmp/ccHFpyPr.s 			page 25
 
 
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_TE_FLAG_INDEX(hdma));
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  978 059c 02D1     		bne	.L382
  198:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_TE_FLAG_INDEX(hdma));
  979              		.loc 1 198 0
-ARM GAS  /tmp/ccH1870c.s 			page 26
+ARM GAS  /tmp/ccHFpyPr.s 			page 26
 
 
  980 059e 4FF48013 		mov	r3, #1048576
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1032 05fe 2368     		ldr	r3, [r4]
  1033 0600 AB4A     		ldr	r2, .L532+4
  1034 0602 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccH1870c.s 			page 27
+ARM GAS  /tmp/ccHFpyPr.s 			page 27
 
 
  1035 0604 54D9     		bls	.L124
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1078 065a 9342     		cmp	r3, r2
  1079 065c 09D0     		beq	.L393
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_DME_FLAG_INDEX(hdma));
-ARM GAS  /tmp/ccH1870c.s 			page 28
+ARM GAS  /tmp/ccHFpyPr.s 			page 28
 
 
  1080              		.loc 1 199 0 discriminator 23
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1131 06b4 53D9     		bls	.L138
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_DME_FLAG_INDEX(hdma));
  1132              		.loc 1 199 0 discriminator 51
-ARM GAS  /tmp/ccH1870c.s 			page 29
+ARM GAS  /tmp/ccHFpyPr.s 			page 29
 
 
  1133 06b6 A83A     		subs	r2, r2, #168
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1176              		.loc 1 199 0 discriminator 73
  1177 070c 02F58062 		add	r2, r2, #1024
  1178 0710 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccH1870c.s 			page 30
+ARM GAS  /tmp/ccHFpyPr.s 			page 30
 
 
  1179 0712 02D1     		bne	.L406
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1229 0764 483A     		subs	r2, r2, #72
  1230 0766 9342     		cmp	r3, r2
  1231 0768 4CD0     		beq	.L407
-ARM GAS  /tmp/ccH1870c.s 			page 31
+ARM GAS  /tmp/ccHFpyPr.s 			page 31
 
 
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_DME_FLAG_INDEX(hdma));
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1275 07c0 02D1     		bne	.L418
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_DME_FLAG_INDEX(hdma));
  1276              		.loc 1 199 0
-ARM GAS  /tmp/ccH1870c.s 			page 32
+ARM GAS  /tmp/ccHFpyPr.s 			page 32
 
 
  1277 07c2 4FF40023 		mov	r3, #524288
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  199:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_DME_FLAG_INDEX(hdma));
  1328              		.loc 1 199 0 discriminator 155
  1329 081a A2F56872 		sub	r2, r2, #928
-ARM GAS  /tmp/ccH1870c.s 			page 33
+ARM GAS  /tmp/ccHFpyPr.s 			page 33
 
 
  1330 081e 9342     		cmp	r3, r2
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1374              	.L429:
  1375 0876 4FF40023 		mov	r3, #524288
  1376 087a 24E0     		b	.L165
-ARM GAS  /tmp/ccH1870c.s 			page 34
+ARM GAS  /tmp/ccHFpyPr.s 			page 34
 
 
  1377              	.L428:
@@ -2038,7 +2038,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1428 08d8 4CD0     		beq	.L431
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_FE_FLAG_INDEX(hdma));
  1429              		.loc 1 200 0 discriminator 3
-ARM GAS  /tmp/ccH1870c.s 			page 35
+ARM GAS  /tmp/ccHFpyPr.s 			page 35
 
 
  1430 08da 02F58062 		add	r2, r2, #1024
@@ -2098,7 +2098,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1473              		.loc 1 200 0
  1474 0932 4FF48023 		mov	r3, #262144
  1475 0936 1EE0     		b	.L178
-ARM GAS  /tmp/ccH1870c.s 			page 36
+ARM GAS  /tmp/ccHFpyPr.s 			page 36
 
 
  1476              	.L442:
@@ -2158,7 +2158,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1526 0988 02F58062 		add	r2, r2, #1024
  1527 098c 9342     		cmp	r3, r2
  1528 098e 46D0     		beq	.L444
-ARM GAS  /tmp/ccH1870c.s 			page 37
+ARM GAS  /tmp/ccHFpyPr.s 			page 37
 
 
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_FE_FLAG_INDEX(hdma));
@@ -2218,7 +2218,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1572              	.L454:
  1573 09e6 4FF08073 		mov	r3, #16777216
  1574 09ea 1BE0     		b	.L192
-ARM GAS  /tmp/ccH1870c.s 			page 38
+ARM GAS  /tmp/ccHFpyPr.s 			page 38
 
 
  1575              	.L453:
@@ -2278,7 +2278,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_FE_FLAG_INDEX(hdma));
  1625              		.loc 1 200 0 discriminator 106
  1626 0a3e A2F56872 		sub	r2, r2, #928
-ARM GAS  /tmp/ccH1870c.s 			page 39
+ARM GAS  /tmp/ccHFpyPr.s 			page 39
 
 
  1627 0a42 9342     		cmp	r3, r2
@@ -2338,7 +2338,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1671              	.L465:
  1672 0a9a 4FF48023 		mov	r3, #262144
  1673 0a9e 18E0     		b	.L205
-ARM GAS  /tmp/ccH1870c.s 			page 40
+ARM GAS  /tmp/ccHFpyPr.s 			page 40
 
 
  1674              	.L464:
@@ -2398,7 +2398,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1723 0af2 9342     		cmp	r3, r2
  1724 0af4 3AD0     		beq	.L470
  200:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c ****     __HAL_DMA_CLEAR_FLAG (hdma, __HAL_DMA_GET_FE_FLAG_INDEX(hdma));
-ARM GAS  /tmp/ccH1870c.s 			page 41
+ARM GAS  /tmp/ccHFpyPr.s 			page 41
 
 
  1725              		.loc 1 200 0 discriminator 159
@@ -2458,7 +2458,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1771 0b52 1EE0     		b	.L218
  1772              	.L474:
  1773 0b54 4FF48073 		mov	r3, #256
-ARM GAS  /tmp/ccH1870c.s 			page 42
+ARM GAS  /tmp/ccHFpyPr.s 			page 42
 
 
  1774 0b58 1BE0     		b	.L218
@@ -2518,7 +2518,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1823 0bae A2F56872 		sub	r2, r2, #928
  1824 0bb2 9342     		cmp	r3, r2
  1825 0bb4 3CD0     		beq	.L481
-ARM GAS  /tmp/ccH1870c.s 			page 43
+ARM GAS  /tmp/ccHFpyPr.s 			page 43
 
 
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
@@ -2578,7 +2578,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1870 0c0e 14E0     		b	.L231
  1871              	.L488:
  1872 0c10 4FF48033 		mov	r3, #65536
-ARM GAS  /tmp/ccH1870c.s 			page 44
+ARM GAS  /tmp/ccHFpyPr.s 			page 44
 
 
  1873 0c14 11E0     		b	.L231
@@ -2638,7 +2638,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
  1922              		.loc 1 201 0 discriminator 57
  1923 0c5c 02F58062 		add	r2, r2, #1024
-ARM GAS  /tmp/ccH1870c.s 			page 45
+ARM GAS  /tmp/ccHFpyPr.s 			page 45
 
 
  1924 0c60 9342     		cmp	r3, r2
@@ -2698,7 +2698,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  1969 0cba 11E0     		b	.L245
  1970              	.L499:
  1971 0cbc 4FF48033 		mov	r3, #65536
-ARM GAS  /tmp/ccH1870c.s 			page 46
+ARM GAS  /tmp/ccHFpyPr.s 			page 46
 
 
  1972 0cc0 0EE0     		b	.L245
@@ -2758,7 +2758,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2020 0d06 9342     		cmp	r3, r2
  2021 0d08 36D0     		beq	.L506
  201:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c **** 
-ARM GAS  /tmp/ccH1870c.s 			page 47
+ARM GAS  /tmp/ccHFpyPr.s 			page 47
 
 
  2022              		.loc 1 201 0 discriminator 110
@@ -2818,7 +2818,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2068 0d66 0EE0     		b	.L258
  2069              	.L510:
  2070 0d68 4023     		movs	r3, #64
-ARM GAS  /tmp/ccH1870c.s 			page 48
+ARM GAS  /tmp/ccHFpyPr.s 			page 48
 
 
  2071 0d6a 0CE0     		b	.L258
@@ -2878,7 +2878,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2118              		.loc 1 201 0 discriminator 161
  2119 0db2 02F58062 		add	r2, r2, #1024
  2120 0db6 9342     		cmp	r3, r2
-ARM GAS  /tmp/ccH1870c.s 			page 49
+ARM GAS  /tmp/ccHFpyPr.s 			page 49
 
 
  2121 0db8 2AD0     		beq	.L520
@@ -2938,7 +2938,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2168 0e10 4023     		movs	r3, #64
  2169 0e12 08E0     		b	.L271
  2170              	.L519:
-ARM GAS  /tmp/ccH1870c.s 			page 50
+ARM GAS  /tmp/ccHFpyPr.s 			page 50
 
 
  2171 0e14 4023     		movs	r3, #64
@@ -2998,7 +2998,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2217              		.loc 1 157 0
  2218 0e5a 0020     		movs	r0, #0
  2219 0e5c 38BD     		pop	{r3, r4, r5, pc}
-ARM GAS  /tmp/ccH1870c.s 			page 51
+ARM GAS  /tmp/ccHFpyPr.s 			page 51
 
 
  2220              	.LVL29:
@@ -3058,7 +3058,7 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2268              		.loc 1 245 0
  2269 0002 0368     		ldr	r3, [r0]
  2270 0004 D960     		str	r1, [r3, #12]
-ARM GAS  /tmp/ccH1870c.s 			page 52
+ARM GAS  /tmp/ccHFpyPr.s 			page 52
 
 
  2271 0006 01E0     		b	.L540
@@ -3084,28 +3084,67 @@ ARM GAS  /tmp/ccH1870c.s 			page 1
  2290              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
  2291              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h"
  2292              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  /tmp/ccH1870c.s 			page 53
+ARM GAS  /tmp/ccHFpyPr.s 			page 53
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_dma_ex.c
-     /tmp/ccH1870c.s:20     .text.DMA_MultiBufferSetConfig:0000000000000000 $t
-     /tmp/ccH1870c.s:24     .text.DMA_MultiBufferSetConfig:0000000000000000 DMA_MultiBufferSetConfig
-     /tmp/ccH1870c.s:73     .text.HAL_DMAEx_MultiBufferStart:0000000000000000 $t
-     /tmp/ccH1870c.s:78     .text.HAL_DMAEx_MultiBufferStart:0000000000000000 HAL_DMAEx_MultiBufferStart
-     /tmp/ccH1870c.s:165    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000000 $t
-     /tmp/ccH1870c.s:170    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000000 HAL_DMAEx_MultiBufferStart_IT
-     /tmp/ccH1870c.s:629    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000314 $d
-     /tmp/ccH1870c.s:636    .text.HAL_DMAEx_MultiBufferStart_IT:000000000000032c $t
-     /tmp/ccH1870c.s:1018   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000005e0 $d
-     /tmp/ccH1870c.s:1025   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000005f8 $t
-     /tmp/ccH1870c.s:1407   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000008ac $d
-     /tmp/ccH1870c.s:1414   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000008c4 $t
-     /tmp/ccH1870c.s:1796   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000b78 $d
-     /tmp/ccH1870c.s:1803   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000b90 $t
-     /tmp/ccH1870c.s:2243   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000e6c $d
-     /tmp/ccH1870c.s:2253   .text.HAL_DMAEx_ChangeMemory:0000000000000000 $t
-     /tmp/ccH1870c.s:2258   .text.HAL_DMAEx_ChangeMemory:0000000000000000 HAL_DMAEx_ChangeMemory
+     /tmp/ccHFpyPr.s:20     .text.DMA_MultiBufferSetConfig:0000000000000000 $t
+     /tmp/ccHFpyPr.s:24     .text.DMA_MultiBufferSetConfig:0000000000000000 DMA_MultiBufferSetConfig
+     /tmp/ccHFpyPr.s:73     .text.HAL_DMAEx_MultiBufferStart:0000000000000000 $t
+     /tmp/ccHFpyPr.s:78     .text.HAL_DMAEx_MultiBufferStart:0000000000000000 HAL_DMAEx_MultiBufferStart
+     /tmp/ccHFpyPr.s:165    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000000 $t
+     /tmp/ccHFpyPr.s:170    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000000 HAL_DMAEx_MultiBufferStart_IT
+     /tmp/ccHFpyPr.s:629    .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000314 $d
+     /tmp/ccHFpyPr.s:636    .text.HAL_DMAEx_MultiBufferStart_IT:000000000000032c $t
+     /tmp/ccHFpyPr.s:1018   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000005e0 $d
+     /tmp/ccHFpyPr.s:1025   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000005f8 $t
+     /tmp/ccHFpyPr.s:1407   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000008ac $d
+     /tmp/ccHFpyPr.s:1414   .text.HAL_DMAEx_MultiBufferStart_IT:00000000000008c4 $t
+     /tmp/ccHFpyPr.s:1796   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000b78 $d
+     /tmp/ccHFpyPr.s:1803   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000b90 $t
+     /tmp/ccHFpyPr.s:2243   .text.HAL_DMAEx_MultiBufferStart_IT:0000000000000e6c $d
+     /tmp/ccHFpyPr.s:2253   .text.HAL_DMAEx_ChangeMemory:0000000000000000 $t
+     /tmp/ccHFpyPr.s:2258   .text.HAL_DMAEx_ChangeMemory:0000000000000000 HAL_DMAEx_ChangeMemory
                      .debug_frame:0000000000000010 $d
+                           .group:0000000000000000 wm4.0.20963d46ba5d8e371b8630ece00f11ec
+                           .group:0000000000000000 wm4.stm32f4xx_hal_conf.h.24.d14dd899dbfa16d6dc9a7b8d5f0b81d2
+                           .group:0000000000000000 wm4.stm32f4xx.h.55.8c995fbadbb7a126747b547eb8ec7b5b
+                           .group:0000000000000000 wm4.stm32f446xx.h.51.16a9122ede9860ebbb552c9e423d1ecd
+                           .group:0000000000000000 wm4.features.h.22.2e382148a0560adabf236cddd4e880f4
+                           .group:0000000000000000 wm4._default_types.h.15.933e8edd27a65e0b69af4a865eb623d2
+                           .group:0000000000000000 wm4._intsup.h.10.35a45952db64d30146faa63a55c20c1c
+                           .group:0000000000000000 wm4._stdint.h.10.f76354baea1c7088202064e6f3d4f5e3
+                           .group:0000000000000000 wm4.stdint.h.23.373a9d32a9e4c2e88fd347156532d281
+                           .group:0000000000000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
+                           .group:0000000000000000 wm4.core_cm4.h.66.e4ff136c4a17abc46741866f64f8e729
+                           .group:0000000000000000 wm4.cmsis_gcc.h.26.f42444deefab66ffa141b9b9fddb57a3
+                           .group:0000000000000000 wm4.core_cm4.h.174.059a5e001a9e729091d1407208e93224
+                           .group:0000000000000000 wm4.mpu_armv7.h.32.27b4593cb2f8d3152ca5d97a9d72b321
+                           .group:0000000000000000 wm4.stm32f446xx.h.934.bc7ea77f64b5be5f795628ebc7fc6b73
+                           .group:0000000000000000 wm4.stm32f4xx.h.212.729f0f890654645a3f47ccc0cc2b00e7
+                           .group:0000000000000000 wm4.stm32_hal_legacy.h.23.ef4988de22c7a2f0806a94b08b5606e0
+                           .group:0000000000000000 wm4.stddef.h.39.c744ceb84abf2f8351653f0e2622da1c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_def.h.58.2d2c85d5b9693a63e90566b806e8a752
+                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc_ex.h.22.ed8712e28628f6d35bd6f8847ee2f18f
+                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc.h.108.0c18a3cfc2dd91bdf92470b4bd0ea1b5
+                           .group:0000000000000000 wm4.stm32f4xx_hal_exti.h.22.66e33df8a935c9f8e1682d5515a6c09a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.22.be2c6bcf9722096ea8f49a41bf6aa50c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio_ex.h.22.6858f59ca8a52c645189c74569e4d5b8
+                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.264.528537eb92c2ec5c1cd9dfb4d255d1da
+                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.22.fffce20ac9119c50557659c75e75ab1c
+                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.721.a1e57ffbc615f926e6509c5acc65e492
+                           .group:0000000000000000 wm4.stm32f4xx_hal_cortex.h.22.e6aa3b847b5388be63c32d1f9e696ef7
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.22.31b301be2655c3eb8583e51c8231544a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash_ex.h.22.df74a74dd40656a7fcd7d90cedd190b4
+                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.363.51efdf0f6c88f683efb89d7cc95cc1be
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.22.2c27d93ae187efe3a73816f03a329970
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr_ex.h.22.cf49f655fb514fa1eda6a251fa1b2f1a
+                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
+                           .group:0000000000000000 wm4.stm32f4xx_hal_uart.h.22.2b47c8130d845b927904837c0b2264ce
+                           .group:0000000000000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840
+
+ARM GAS  /tmp/ccHFpyPr.s 			page 54
+
 
 NO UNDEFINED SYMBOLS

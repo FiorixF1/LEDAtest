@@ -28,7 +28,7 @@ Compila libkeccak
         <gcc>-fomit-frame-pointer</gcc>
         <gcc>-O2</gcc>
         <gcc>-g0</gcc>
-        <gcc>-march=armv7-m</gcc>
+        <gcc>-mcpu=cortex-m4</gcc>
         <gcc>-mthumb</gcc>
         <gcc>-mfpu=fpv4-sp-d16</gcc>
         <gcc>-mfloat-abi=softfp</gcc> 
@@ -38,7 +38,6 @@ Compila libkeccak
     In quel caso devi solo mettere in giro le flag giuste e il compilatore ARM, poi funziona tutto.
 Modificare Makefile per LEDAcrypt: inserisci GCC per ARM, flag per FPU, -std=c11
 Compila LEDAcrypt
-    Purtroppo non funziona la libreria time.h (non prende la funzione clock_gettime...)
 
 
 
