@@ -45,5 +45,6 @@ Compila LEDAcrypt
 openocd -f tcl/board/st_nucleo_f4.cfg
 
 target remote :3333
+file ./build/LEDAtest.elf
 monitor reset halt
 

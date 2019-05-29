@@ -26,6 +26,9 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
 #include "api.h"
 /* USER CODE END Includes */
 
@@ -98,26 +101,53 @@ int main(void)
   char *test = "I'm alive\n\r";
   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
   
-  char msg[CRYPTO_CIPHERTEXTBYTES] = "Hello Nucleo Fun!\n\r";
-  char *PAIR = "Generating keys...\n\r";
-  char *ENC = "Encrypting...\n\r";
-  char *ERR_PAIR = "Error in keypair\n\r";
-  char *ERR_ENC = "Error in enc\n\r";
+  for (int i = 0; i < 10; ++i) {
+      char number[10];
+      itoa(rand() % 1000, number, 10);
+      number[strlen(number)+1] = 0;
+      number[strlen(number)] = '\n';
+      HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFF);
+  }
+  
+  unsigned char *entropy;
+  unsigned char *custom = "AAAAAAAAAAgigkhkhctdvgbjknhjnbvAAAAAAAAAAAAAAAAA";
+  for (unsigned char i = 0; i < 48; ++i) {
+      entropy[i] = i;
+  }
+  randombytes_init(entropy, custom, 1);
+  
+  char *PAIR = "\n\rGenerating keys...";
+  char *ENC = "\n\rEncrypting...";
+  char *DEC = "\n\rDecrypting...";
+  char *SHOW_CTX = "\n\rCiphertext Encrypt(e, sk) is: ";
+  char *SHOW_SS = "\n\rShared secret Hash(e) - or Hash(c.k) - is: ";
+  char *ERR_PAIR = "\n\rError in keypair";
+  char *ERR_ENC = "\n\rError in enc";
+  char *ERR_DEC = "\n\rError in dec";
   int ans;
-
-  unsigned char *pk;
-  unsigned char *sk;
+  
+  unsigned char msg[CRYPTO_CIPHERTEXTBYTES] = "Hello Nucleo Fun!\n\r";
+  unsigned char pk[CRYPTO_PUBLICKEYBYTES];
+  unsigned char sk[CRYPTO_SECRETKEYBYTES];
+  unsigned char ss[CRYPTO_BYTES];
   
   HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFF);
   ans = crypto_kem_keypair(pk, sk);
-  if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
   
-  unsigned char ss[9] = "wewewewe";
   HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
   ans = crypto_kem_enc(msg, ss, pk);
-  if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
-  
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFF);
   HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+  
+  HAL_UART_Transmit(&huart2, (uint8_t*)DEC, strlen(DEC), 0xFFFF);
+  ans = crypto_kem_dec(ss, msg, sk);
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
   
   /* USER CODE END 2 */
 

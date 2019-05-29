@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccw273VV.s 			page 1
+ARM GAS  /tmp/cc9p6RLl.s 			page 1
 
 
    1              		.syntax unified
@@ -55,44 +55,47 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
   26:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
   27:Src/main.c    **** /* USER CODE BEGIN Includes */
   28:Src/main.c    **** #include <string.h>
-  29:Src/main.c    **** #include "api.h"
-  30:Src/main.c    **** /* USER CODE END Includes */
-  31:Src/main.c    **** 
-ARM GAS  /tmp/ccw273VV.s 			page 2
+  29:Src/main.c    **** #include <time.h>
+  30:Src/main.c    **** #include <stdlib.h>
+  31:Src/main.c    **** #include <stdio.h>
+ARM GAS  /tmp/cc9p6RLl.s 			page 2
 
 
-  32:Src/main.c    **** /* Private typedef -----------------------------------------------------------*/
-  33:Src/main.c    **** /* USER CODE BEGIN PTD */
+  32:Src/main.c    **** #include "api.h"
+  33:Src/main.c    **** /* USER CODE END Includes */
   34:Src/main.c    **** 
-  35:Src/main.c    **** /* USER CODE END PTD */
-  36:Src/main.c    **** 
-  37:Src/main.c    **** /* Private define ------------------------------------------------------------*/
-  38:Src/main.c    **** /* USER CODE BEGIN PD */
+  35:Src/main.c    **** /* Private typedef -----------------------------------------------------------*/
+  36:Src/main.c    **** /* USER CODE BEGIN PTD */
+  37:Src/main.c    **** 
+  38:Src/main.c    **** /* USER CODE END PTD */
   39:Src/main.c    **** 
-  40:Src/main.c    **** /* USER CODE END PD */
-  41:Src/main.c    **** 
-  42:Src/main.c    **** /* Private macro -------------------------------------------------------------*/
-  43:Src/main.c    **** /* USER CODE BEGIN PM */
+  40:Src/main.c    **** /* Private define ------------------------------------------------------------*/
+  41:Src/main.c    **** /* USER CODE BEGIN PD */
+  42:Src/main.c    **** 
+  43:Src/main.c    **** /* USER CODE END PD */
   44:Src/main.c    **** 
-  45:Src/main.c    **** /* USER CODE END PM */
-  46:Src/main.c    **** 
-  47:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
-  48:Src/main.c    **** 
-  49:Src/main.c    **** /* USER CODE BEGIN PV */
-  50:Src/main.c    **** 
-  51:Src/main.c    **** /* USER CODE END PV */
-  52:Src/main.c    **** 
-  53:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
-  54:Src/main.c    **** void SystemClock_Config(void);
-  55:Src/main.c    **** /* USER CODE BEGIN PFP */
-  56:Src/main.c    **** 
-  57:Src/main.c    **** /* USER CODE END PFP */
-  58:Src/main.c    **** 
-  59:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
-  60:Src/main.c    **** /* USER CODE BEGIN 0 */
-  61:Src/main.c    **** void Delay(__IO uint32_t nCount)
-  62:Src/main.c    **** {
-  28              		.loc 1 62 0
+  45:Src/main.c    **** /* Private macro -------------------------------------------------------------*/
+  46:Src/main.c    **** /* USER CODE BEGIN PM */
+  47:Src/main.c    **** 
+  48:Src/main.c    **** /* USER CODE END PM */
+  49:Src/main.c    **** 
+  50:Src/main.c    **** /* Private variables ---------------------------------------------------------*/
+  51:Src/main.c    **** 
+  52:Src/main.c    **** /* USER CODE BEGIN PV */
+  53:Src/main.c    **** 
+  54:Src/main.c    **** /* USER CODE END PV */
+  55:Src/main.c    **** 
+  56:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  57:Src/main.c    **** void SystemClock_Config(void);
+  58:Src/main.c    **** /* USER CODE BEGIN PFP */
+  59:Src/main.c    **** 
+  60:Src/main.c    **** /* USER CODE END PFP */
+  61:Src/main.c    **** 
+  62:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
+  63:Src/main.c    **** /* USER CODE BEGIN 0 */
+  64:Src/main.c    **** void Delay(__IO uint32_t nCount)
+  65:Src/main.c    **** {
+  28              		.loc 1 65 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 8
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -103,24 +106,24 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
   36              		.cfi_def_cfa_offset 8
   37 0002 0190     		str	r0, [sp, #4]
   38              	.L2:
-  63:Src/main.c    ****     while (nCount--);
-  39              		.loc 1 63 0 discriminator 1
+  66:Src/main.c    ****     while (nCount--);
+  39              		.loc 1 66 0 discriminator 1
   40 0004 019B     		ldr	r3, [sp, #4]
   41 0006 5A1E     		subs	r2, r3, #1
   42 0008 0192     		str	r2, [sp, #4]
   43 000a 002B     		cmp	r3, #0
   44 000c FAD1     		bne	.L2
-  64:Src/main.c    **** }
-  45              		.loc 1 64 0
+  67:Src/main.c    **** }
+  45              		.loc 1 67 0
   46 000e 02B0     		add	sp, sp, #8
   47              	.LCFI1:
   48              		.cfi_def_cfa_offset 0
+ARM GAS  /tmp/cc9p6RLl.s 			page 3
+
+
   49              		@ sp needed
   50 0010 7047     		bx	lr
   51              		.cfi_endproc
-ARM GAS  /tmp/ccw273VV.s 			page 3
-
-
   52              	.LFE140:
   54 0012 00BF     		.section	.text.SystemClock_Config,"ax",%progbits
   55              		.align	2
@@ -129,87 +132,117 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
   58              		.thumb_func
   60              	SystemClock_Config:
   61              	.LFB142:
-  65:Src/main.c    **** /* USER CODE END 0 */
-  66:Src/main.c    **** 
-  67:Src/main.c    **** /**
-  68:Src/main.c    ****   * @brief  The application entry point.
-  69:Src/main.c    ****   * @retval int
-  70:Src/main.c    ****   */
-  71:Src/main.c    **** int main(void)
-  72:Src/main.c    **** {
-  73:Src/main.c    ****   /* USER CODE BEGIN 1 */
-  74:Src/main.c    **** 
-  75:Src/main.c    ****   /* USER CODE END 1 */
-  76:Src/main.c    ****   
+  68:Src/main.c    **** /* USER CODE END 0 */
+  69:Src/main.c    **** 
+  70:Src/main.c    **** /**
+  71:Src/main.c    ****   * @brief  The application entry point.
+  72:Src/main.c    ****   * @retval int
+  73:Src/main.c    ****   */
+  74:Src/main.c    **** int main(void)
+  75:Src/main.c    **** {
+  76:Src/main.c    ****   /* USER CODE BEGIN 1 */
   77:Src/main.c    **** 
-  78:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
-  79:Src/main.c    **** 
-  80:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
-  81:Src/main.c    ****   HAL_Init();
+  78:Src/main.c    ****   /* USER CODE END 1 */
+  79:Src/main.c    ****   
+  80:Src/main.c    **** 
+  81:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
   82:Src/main.c    **** 
-  83:Src/main.c    ****   /* USER CODE BEGIN Init */
-  84:Src/main.c    **** 
-  85:Src/main.c    ****   /* USER CODE END Init */
-  86:Src/main.c    **** 
-  87:Src/main.c    ****   /* Configure the system clock */
-  88:Src/main.c    ****   SystemClock_Config();
+  83:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  84:Src/main.c    ****   HAL_Init();
+  85:Src/main.c    **** 
+  86:Src/main.c    ****   /* USER CODE BEGIN Init */
+  87:Src/main.c    **** 
+  88:Src/main.c    ****   /* USER CODE END Init */
   89:Src/main.c    **** 
-  90:Src/main.c    ****   /* USER CODE BEGIN SysInit */
-  91:Src/main.c    **** 
-  92:Src/main.c    ****   /* USER CODE END SysInit */
-  93:Src/main.c    **** 
-  94:Src/main.c    ****   /* Initialize all configured peripherals */
-  95:Src/main.c    ****   MX_GPIO_Init();
-  96:Src/main.c    ****   MX_USART2_UART_Init();
-  97:Src/main.c    ****   /* USER CODE BEGIN 2 */
-  98:Src/main.c    ****   char *test = "I'm alive\n\r";
-  99:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
- 100:Src/main.c    ****   
- 101:Src/main.c    ****   char msg[CRYPTO_CIPHERTEXTBYTES] = "Hello Nucleo Fun!\n\r";
- 102:Src/main.c    ****   char *PAIR = "Generating keys...\n\r";
- 103:Src/main.c    ****   char *ENC = "Encrypting...\n\r";
- 104:Src/main.c    ****   char *ERR_PAIR = "Error in keypair\n\r";
- 105:Src/main.c    ****   char *ERR_ENC = "Error in enc\n\r";
- 106:Src/main.c    ****   int ans;
- 107:Src/main.c    **** 
- 108:Src/main.c    ****   unsigned char *pk;
- 109:Src/main.c    ****   unsigned char *sk;
- 110:Src/main.c    ****   
- 111:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFF);
- 112:Src/main.c    ****   ans = crypto_kem_keypair(pk, sk);
- 113:Src/main.c    ****   if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
-ARM GAS  /tmp/ccw273VV.s 			page 4
+  90:Src/main.c    ****   /* Configure the system clock */
+  91:Src/main.c    ****   SystemClock_Config();
+  92:Src/main.c    **** 
+  93:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+  94:Src/main.c    **** 
+  95:Src/main.c    ****   /* USER CODE END SysInit */
+  96:Src/main.c    **** 
+  97:Src/main.c    ****   /* Initialize all configured peripherals */
+  98:Src/main.c    ****   MX_GPIO_Init();
+  99:Src/main.c    ****   MX_USART2_UART_Init();
+ 100:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 101:Src/main.c    ****   char *test = "I'm alive\n\r";
+ 102:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
+ 103:Src/main.c    ****   
+ 104:Src/main.c    ****   for (int i = 0; i < 10; ++i) {
+ 105:Src/main.c    ****       char number[10];
+ 106:Src/main.c    ****       itoa(rand() % 1000, number, 10);
+ 107:Src/main.c    ****       number[strlen(number)+1] = 0;
+ 108:Src/main.c    ****       number[strlen(number)] = '\n';
+ 109:Src/main.c    ****       HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFF);
+ 110:Src/main.c    ****   }
+ 111:Src/main.c    ****   
+ 112:Src/main.c    ****   unsigned char *entropy;
+ 113:Src/main.c    ****   unsigned char *custom = "AAAAAAAAAAgigkhkhctdvgbjknhjnbvAAAAAAAAAAAAAAAAA";
+ARM GAS  /tmp/cc9p6RLl.s 			page 4
 
 
- 114:Src/main.c    ****   
- 115:Src/main.c    ****   unsigned char ss[9] = "wewewewe";
- 116:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
- 117:Src/main.c    ****   ans = crypto_kem_enc(msg, ss, pk);
- 118:Src/main.c    ****   if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
- 119:Src/main.c    ****   
- 120:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
- 121:Src/main.c    ****   
- 122:Src/main.c    ****   /* USER CODE END 2 */
- 123:Src/main.c    **** 
- 124:Src/main.c    ****   /* Infinite loop */
- 125:Src/main.c    ****   /* USER CODE BEGIN WHILE */
- 126:Src/main.c    ****   while (1)
- 127:Src/main.c    ****   {
- 128:Src/main.c    ****     /* USER CODE END WHILE */
- 129:Src/main.c    ****     HAL_GPIO_TogglePin(Ld2_GPIO_Port,Ld2_Pin); //Toggle LED
- 130:Src/main.c    ****     HAL_Delay(1000); //Delay 1 Seconds
- 131:Src/main.c    ****     /* USER CODE BEGIN 3 */
- 132:Src/main.c    ****   }
- 133:Src/main.c    ****   /* USER CODE END 3 */
- 134:Src/main.c    **** }
- 135:Src/main.c    **** 
- 136:Src/main.c    **** /**
- 137:Src/main.c    ****   * @brief System Clock Configuration
- 138:Src/main.c    ****   * @retval None
- 139:Src/main.c    ****   */
- 140:Src/main.c    **** void SystemClock_Config(void)
- 141:Src/main.c    **** {
-  62              		.loc 1 141 0
+ 114:Src/main.c    ****   for (unsigned char i = 0; i < 48; ++i) {
+ 115:Src/main.c    ****       entropy[i] = i;
+ 116:Src/main.c    ****   }
+ 117:Src/main.c    ****   randombytes_init(entropy, custom, 1);
+ 118:Src/main.c    ****   
+ 119:Src/main.c    ****   char *PAIR = "\n\rGenerating keys...";
+ 120:Src/main.c    ****   char *ENC = "\n\rEncrypting...";
+ 121:Src/main.c    ****   char *DEC = "\n\rDecrypting...";
+ 122:Src/main.c    ****   char *SHOW_CTX = "\n\rCiphertext Encrypt(e, sk) is: ";
+ 123:Src/main.c    ****   char *SHOW_SS = "\n\rShared secret Hash(e) - or Hash(c.k) - is: ";
+ 124:Src/main.c    ****   char *ERR_PAIR = "\n\rError in keypair";
+ 125:Src/main.c    ****   char *ERR_ENC = "\n\rError in enc";
+ 126:Src/main.c    ****   char *ERR_DEC = "\n\rError in dec";
+ 127:Src/main.c    ****   int ans;
+ 128:Src/main.c    ****   
+ 129:Src/main.c    ****   unsigned char msg[CRYPTO_CIPHERTEXTBYTES] = "Hello Nucleo Fun!\n\r";
+ 130:Src/main.c    ****   unsigned char pk[CRYPTO_PUBLICKEYBYTES];
+ 131:Src/main.c    ****   unsigned char sk[CRYPTO_SECRETKEYBYTES];
+ 132:Src/main.c    ****   unsigned char ss[CRYPTO_BYTES];
+ 133:Src/main.c    ****   
+ 134:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFF);
+ 135:Src/main.c    ****   ans = crypto_kem_keypair(pk, sk);
+ 136:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
+ 137:Src/main.c    ****   
+ 138:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
+ 139:Src/main.c    ****   ans = crypto_kem_enc(msg, ss, pk);
+ 140:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
+ 141:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFF);
+ 142:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
+ 143:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+ 144:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+ 145:Src/main.c    ****   
+ 146:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)DEC, strlen(DEC), 0xFFFF);
+ 147:Src/main.c    ****   ans = crypto_kem_dec(ss, msg, sk);
+ 148:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFF);
+ 149:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+ 150:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+ 151:Src/main.c    ****   
+ 152:Src/main.c    ****   /* USER CODE END 2 */
+ 153:Src/main.c    **** 
+ 154:Src/main.c    ****   /* Infinite loop */
+ 155:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 156:Src/main.c    ****   while (1)
+ 157:Src/main.c    ****   {
+ 158:Src/main.c    ****     /* USER CODE END WHILE */
+ 159:Src/main.c    ****     HAL_GPIO_TogglePin(Ld2_GPIO_Port,Ld2_Pin); //Toggle LED
+ 160:Src/main.c    ****     HAL_Delay(1000); //Delay 1 Seconds
+ 161:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 162:Src/main.c    ****   }
+ 163:Src/main.c    ****   /* USER CODE END 3 */
+ 164:Src/main.c    **** }
+ 165:Src/main.c    **** 
+ 166:Src/main.c    **** /**
+ 167:Src/main.c    ****   * @brief System Clock Configuration
+ 168:Src/main.c    ****   * @retval None
+ 169:Src/main.c    ****   */
+ 170:Src/main.c    **** void SystemClock_Config(void)
+ARM GAS  /tmp/cc9p6RLl.s 			page 5
+
+
+ 171:Src/main.c    **** {
+  62              		.loc 1 171 0
   63              		.cfi_startproc
   64              		@ args = 0, pretend = 0, frame = 80
   65              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -222,8 +255,8 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
   72 0002 95B0     		sub	sp, sp, #84
   73              	.LCFI3:
   74              		.cfi_def_cfa_offset 96
- 142:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  75              		.loc 1 142 0
+ 172:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  75              		.loc 1 172 0
   76 0004 0024     		movs	r4, #0
   77 0006 0794     		str	r4, [sp, #28]
   78 0008 0894     		str	r4, [sp, #32]
@@ -238,22 +271,19 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
   87 001a 1194     		str	r4, [sp, #68]
   88 001c 1294     		str	r4, [sp, #72]
   89 001e 1394     		str	r4, [sp, #76]
-ARM GAS  /tmp/ccw273VV.s 			page 5
-
-
- 143:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  90              		.loc 1 143 0
+ 173:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  90              		.loc 1 173 0
   91 0020 0294     		str	r4, [sp, #8]
   92 0022 0394     		str	r4, [sp, #12]
   93 0024 0494     		str	r4, [sp, #16]
   94 0026 0594     		str	r4, [sp, #20]
   95 0028 0694     		str	r4, [sp, #24]
   96              	.LBB2:
- 144:Src/main.c    **** 
- 145:Src/main.c    ****   /** Configure the main internal regulator output voltage 
- 146:Src/main.c    ****   */
- 147:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
-  97              		.loc 1 147 0
+ 174:Src/main.c    **** 
+ 175:Src/main.c    ****   /** Configure the main internal regulator output voltage 
+ 176:Src/main.c    ****   */
+ 177:Src/main.c    ****   __HAL_RCC_PWR_CLK_ENABLE();
+  97              		.loc 1 177 0
   98 002a 0094     		str	r4, [sp]
   99 002c 1B4B     		ldr	r3, .L6
  100 002e 1A6C     		ldr	r2, [r3, #64]
@@ -265,9 +295,12 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
  106 003e 009B     		ldr	r3, [sp]
  107              	.LBE2:
  108              	.LBB3:
- 148:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
- 109              		.loc 1 148 0
+ 178:Src/main.c    ****   __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE3);
+ 109              		.loc 1 178 0
  110 0040 0194     		str	r4, [sp, #4]
+ARM GAS  /tmp/cc9p6RLl.s 			page 6
+
+
  111 0042 174A     		ldr	r2, .L6+4
  112 0044 1368     		ldr	r3, [r2]
  113 0046 23F44043 		bic	r3, r3, #49152
@@ -278,89 +311,86 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
  118 0056 0193     		str	r3, [sp, #4]
  119 0058 019B     		ldr	r3, [sp, #4]
  120              	.LBE3:
- 149:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 150:Src/main.c    ****   */
- 151:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
- 121              		.loc 1 151 0
+ 179:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 180:Src/main.c    ****   */
+ 181:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+ 121              		.loc 1 181 0
  122 005a 0225     		movs	r5, #2
  123 005c 0795     		str	r5, [sp, #28]
- 152:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
- 124              		.loc 1 152 0
+ 182:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+ 124              		.loc 1 182 0
  125 005e 0123     		movs	r3, #1
  126 0060 0A93     		str	r3, [sp, #40]
- 153:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 127              		.loc 1 153 0
+ 183:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+ 127              		.loc 1 183 0
  128 0062 1023     		movs	r3, #16
  129 0064 0B93     		str	r3, [sp, #44]
- 154:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 130              		.loc 1 154 0
+ 184:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+ 130              		.loc 1 184 0
  131 0066 0D95     		str	r5, [sp, #52]
- 155:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
- 132              		.loc 1 155 0
+ 185:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ 132              		.loc 1 185 0
  133 0068 0E94     		str	r4, [sp, #56]
-ARM GAS  /tmp/ccw273VV.s 			page 6
-
-
- 156:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 16;
- 134              		.loc 1 156 0
+ 186:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 16;
+ 134              		.loc 1 186 0
  135 006a 0F93     		str	r3, [sp, #60]
- 157:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 336;
- 136              		.loc 1 157 0
+ 187:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 336;
+ 136              		.loc 1 187 0
  137 006c 4FF4A873 		mov	r3, #336
  138 0070 1093     		str	r3, [sp, #64]
- 158:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
- 139              		.loc 1 158 0
+ 188:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+ 139              		.loc 1 188 0
  140 0072 0423     		movs	r3, #4
  141 0074 1193     		str	r3, [sp, #68]
- 159:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 2;
- 142              		.loc 1 159 0
+ 189:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = 2;
+ 142              		.loc 1 189 0
  143 0076 1295     		str	r5, [sp, #72]
- 160:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = 2;
- 144              		.loc 1 160 0
+ 190:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = 2;
+ 144              		.loc 1 190 0
  145 0078 1395     		str	r5, [sp, #76]
- 161:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
- 146              		.loc 1 161 0
+ 191:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+ 146              		.loc 1 191 0
  147 007a 07A8     		add	r0, sp, #28
  148 007c FFF7FEFF 		bl	HAL_RCC_OscConfig
  149              	.LVL1:
- 162:Src/main.c    ****   {
- 163:Src/main.c    ****     Error_Handler();
- 164:Src/main.c    ****   }
- 165:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
- 166:Src/main.c    ****   */
- 167:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
- 150              		.loc 1 167 0
+ 192:Src/main.c    ****   {
+ 193:Src/main.c    ****     Error_Handler();
+ 194:Src/main.c    ****   }
+ 195:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks 
+ 196:Src/main.c    ****   */
+ARM GAS  /tmp/cc9p6RLl.s 			page 7
+
+
+ 197:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+ 150              		.loc 1 197 0
  151 0080 0F23     		movs	r3, #15
  152 0082 0293     		str	r3, [sp, #8]
- 168:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
- 169:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 153              		.loc 1 169 0
+ 198:Src/main.c    ****                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+ 199:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+ 153              		.loc 1 199 0
  154 0084 0395     		str	r5, [sp, #12]
- 170:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 155              		.loc 1 170 0
+ 200:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+ 155              		.loc 1 200 0
  156 0086 0494     		str	r4, [sp, #16]
- 171:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
- 157              		.loc 1 171 0
+ 201:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
+ 157              		.loc 1 201 0
  158 0088 4FF48053 		mov	r3, #4096
  159 008c 0593     		str	r3, [sp, #20]
- 172:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 160              		.loc 1 172 0
+ 202:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+ 160              		.loc 1 202 0
  161 008e 0694     		str	r4, [sp, #24]
- 173:Src/main.c    **** 
- 174:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
- 162              		.loc 1 174 0
+ 203:Src/main.c    **** 
+ 204:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
+ 162              		.loc 1 204 0
  163 0090 02A8     		add	r0, sp, #8
  164 0092 2946     		mov	r1, r5
  165 0094 FFF7FEFF 		bl	HAL_RCC_ClockConfig
  166              	.LVL2:
- 175:Src/main.c    ****   {
- 176:Src/main.c    ****     Error_Handler();
- 177:Src/main.c    ****   }
- 178:Src/main.c    **** }
- 167              		.loc 1 178 0
-ARM GAS  /tmp/ccw273VV.s 			page 7
-
-
+ 205:Src/main.c    ****   {
+ 206:Src/main.c    ****     Error_Handler();
+ 207:Src/main.c    ****   }
+ 208:Src/main.c    **** }
+ 167              		.loc 1 208 0
  168 0098 15B0     		add	sp, sp, #84
  169              	.LCFI4:
  170              		.cfi_def_cfa_offset 12
@@ -380,281 +410,477 @@ ARM GAS  /tmp/ccw273VV.s 			page 1
  185              		.thumb_func
  187              	main:
  188              	.LFB141:
-  72:Src/main.c    ****   /* USER CODE BEGIN 1 */
- 189              		.loc 1 72 0
+  75:Src/main.c    ****   /* USER CODE BEGIN 1 */
+ 189              		.loc 1 75 0
  190              		.cfi_startproc
- 191              		@ args = 0, pretend = 0, frame = 1880
+ 191              		@ args = 0, pretend = 0, frame = 3808
  192              		@ frame_needed = 0, uses_anonymous_args = 0
- 193 0000 70B5     		push	{r4, r5, r6, lr}
+ 193 0000 30B5     		push	{r4, r5, lr}
  194              	.LCFI5:
- 195              		.cfi_def_cfa_offset 16
- 196              		.cfi_offset 4, -16
- 197              		.cfi_offset 5, -12
- 198              		.cfi_offset 6, -8
- 199              		.cfi_offset 14, -4
- 200 0002 ADF5EB6D 		sub	sp, sp, #1880
- 201              	.LCFI6:
- 202              		.cfi_def_cfa_offset 1896
-  81:Src/main.c    **** 
- 203              		.loc 1 81 0
- 204 0006 FFF7FEFF 		bl	HAL_Init
- 205              	.LVL3:
-  88:Src/main.c    **** 
- 206              		.loc 1 88 0
- 207 000a FFF7FEFF 		bl	SystemClock_Config
- 208              	.LVL4:
-  95:Src/main.c    ****   MX_USART2_UART_Init();
- 209              		.loc 1 95 0
- 210 000e FFF7FEFF 		bl	MX_GPIO_Init
- 211              	.LVL5:
-  96:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 212              		.loc 1 96 0
- 213 0012 FFF7FEFF 		bl	MX_USART2_UART_Init
- 214              	.LVL6:
-  99:Src/main.c    ****   
- 215              		.loc 1 99 0
- 216 0016 2A4E     		ldr	r6, .L13
- 217 0018 3046     		mov	r0, r6
- 218 001a 2A49     		ldr	r1, .L13+4
- 219 001c 0B22     		movs	r2, #11
- 220 001e 4FF6FF73 		movw	r3, #65535
-ARM GAS  /tmp/ccw273VV.s 			page 8
+ 195              		.cfi_def_cfa_offset 12
+ARM GAS  /tmp/cc9p6RLl.s 			page 8
 
 
- 221 0022 FFF7FEFF 		bl	HAL_UART_Transmit
- 222              	.LVL7:
- 101:Src/main.c    ****   char *PAIR = "Generating keys...\n\r";
- 223              		.loc 1 101 0
- 224 0026 03AC     		add	r4, sp, #12
- 225 0028 274D     		ldr	r5, .L13+8
- 226 002a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 227 002c 0FC4     		stmia	r4!, {r0, r1, r2, r3}
- 228 002e 2B68     		ldr	r3, [r5]
- 229 0030 2360     		str	r3, [r4]
- 230 0032 08A8     		add	r0, sp, #32
- 231 0034 0021     		movs	r1, #0
- 232 0036 4FF4E762 		mov	r2, #1848
- 233 003a FFF7FEFF 		bl	memset
- 234              	.LVL8:
- 111:Src/main.c    ****   ans = crypto_kem_keypair(pk, sk);
- 235              		.loc 1 111 0
- 236 003e 3046     		mov	r0, r6
- 237 0040 2249     		ldr	r1, .L13+12
- 238 0042 1422     		movs	r2, #20
- 239 0044 4FF6FF73 		movw	r3, #65535
- 240 0048 FFF7FEFF 		bl	HAL_UART_Transmit
- 241              	.LVL9:
- 112:Src/main.c    ****   if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
- 242              		.loc 1 112 0
- 243 004c 0020     		movs	r0, #0
- 244 004e 0146     		mov	r1, r0
- 245 0050 FFF7FEFF 		bl	crypto_kem_keypair
- 246              	.LVL10:
- 113:Src/main.c    ****   
- 247              		.loc 1 113 0
- 248 0054 B0F1FF3F 		cmp	r0, #-1
- 249 0058 06D1     		bne	.L9
- 113:Src/main.c    ****   
- 250              		.loc 1 113 0 is_stmt 0 discriminator 1
- 251 005a 3046     		mov	r0, r6
- 252              	.LVL11:
- 253 005c 1C49     		ldr	r1, .L13+16
- 254 005e 1222     		movs	r2, #18
- 255 0060 4FF6FF73 		movw	r3, #65535
- 256 0064 FFF7FEFF 		bl	HAL_UART_Transmit
- 257              	.LVL12:
- 258              	.L9:
- 115:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
- 259              		.loc 1 115 0 is_stmt 1
- 260 0068 1A4A     		ldr	r2, .L13+20
- 261 006a 6B46     		mov	r3, sp
- 262 006c 07CA     		ldmia	r2, {r0, r1, r2}
- 263 006e 03C3     		stmia	r3!, {r0, r1}
- 264 0070 1A70     		strb	r2, [r3]
- 116:Src/main.c    ****   ans = crypto_kem_enc(msg, ss, pk);
- 265              		.loc 1 116 0
- 266 0072 1348     		ldr	r0, .L13
- 267 0074 1849     		ldr	r1, .L13+24
- 268 0076 0F22     		movs	r2, #15
- 269 0078 4FF6FF73 		movw	r3, #65535
- 270 007c FFF7FEFF 		bl	HAL_UART_Transmit
-ARM GAS  /tmp/ccw273VV.s 			page 9
+ 196              		.cfi_offset 4, -12
+ 197              		.cfi_offset 5, -8
+ 198              		.cfi_offset 14, -4
+ 199 0002 ADF6E46D 		subw	sp, sp, #3812
+ 200              	.LCFI6:
+ 201              		.cfi_def_cfa_offset 3824
+  84:Src/main.c    **** 
+ 202              		.loc 1 84 0
+ 203 0006 FFF7FEFF 		bl	HAL_Init
+ 204              	.LVL3:
+  91:Src/main.c    **** 
+ 205              		.loc 1 91 0
+ 206 000a FFF7FEFF 		bl	SystemClock_Config
+ 207              	.LVL4:
+  98:Src/main.c    ****   MX_USART2_UART_Init();
+ 208              		.loc 1 98 0
+ 209 000e FFF7FEFF 		bl	MX_GPIO_Init
+ 210              	.LVL5:
+  99:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 211              		.loc 1 99 0
+ 212 0012 FFF7FEFF 		bl	MX_USART2_UART_Init
+ 213              	.LVL6:
+ 102:Src/main.c    ****   
+ 214              		.loc 1 102 0
+ 215 0016 6048     		ldr	r0, .L18
+ 216 0018 6049     		ldr	r1, .L18+4
+ 217 001a 0B22     		movs	r2, #11
+ 218 001c 4FF6FF73 		movw	r3, #65535
+ 219 0020 FFF7FEFF 		bl	HAL_UART_Transmit
+ 220              	.LVL7:
+ 221              	.LBB4:
+ 104:Src/main.c    ****       char number[10];
+ 222              		.loc 1 104 0
+ 223 0024 0025     		movs	r5, #0
+ 224 0026 26E0     		b	.L9
+ 225              	.LVL8:
+ 226              	.L10:
+ 227              	.LBB5:
+ 106:Src/main.c    ****       number[strlen(number)+1] = 0;
+ 228              		.loc 1 106 0 discriminator 3
+ 229 0028 FFF7FEFF 		bl	rand
+ 230              	.LVL9:
+ 231 002c 5C4B     		ldr	r3, .L18+8
+ 232 002e 83FB0032 		smull	r3, r2, r3, r0
+ 233 0032 C317     		asrs	r3, r0, #31
+ 234 0034 C3EBA213 		rsb	r3, r3, r2, asr #6
+ 235 0038 01AC     		add	r4, sp, #4
+ 236 003a 4FF47A72 		mov	r2, #1000
+ 237 003e 02FB1300 		mls	r0, r2, r3, r0
+ 238 0042 2146     		mov	r1, r4
+ 239 0044 0A22     		movs	r2, #10
+ 240 0046 FFF7FEFF 		bl	itoa
+ 241              	.LVL10:
+ 107:Src/main.c    ****       number[strlen(number)] = '\n';
+ 242              		.loc 1 107 0 discriminator 3
+ 243 004a 2046     		mov	r0, r4
+ 244 004c FFF7FEFF 		bl	strlen
+ARM GAS  /tmp/cc9p6RLl.s 			page 9
 
 
- 271              	.LVL13:
- 117:Src/main.c    ****   if (ans == -1) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
- 272              		.loc 1 117 0
- 273 0080 03A8     		add	r0, sp, #12
- 274 0082 6946     		mov	r1, sp
- 275 0084 0022     		movs	r2, #0
- 276 0086 FFF7FEFF 		bl	crypto_kem_enc
- 277              	.LVL14:
- 118:Src/main.c    ****   
- 278              		.loc 1 118 0
- 279 008a B0F1FF3F 		cmp	r0, #-1
- 280 008e 06D1     		bne	.L10
- 118:Src/main.c    ****   
- 281              		.loc 1 118 0 is_stmt 0 discriminator 1
- 282 0090 0B48     		ldr	r0, .L13
- 283              	.LVL15:
- 284 0092 1249     		ldr	r1, .L13+28
- 285 0094 0E22     		movs	r2, #14
- 286 0096 4FF6FF73 		movw	r3, #65535
- 287 009a FFF7FEFF 		bl	HAL_UART_Transmit
- 288              	.LVL16:
- 289              	.L10:
- 120:Src/main.c    ****   
- 290              		.loc 1 120 0 is_stmt 1
- 291 009e 0848     		ldr	r0, .L13
- 292 00a0 03A9     		add	r1, sp, #12
- 293 00a2 40F24C72 		movw	r2, #1868
- 294 00a6 4FF6FF73 		movw	r3, #65535
- 295 00aa FFF7FEFF 		bl	HAL_UART_Transmit
- 296              	.LVL17:
- 297              	.L11:
- 129:Src/main.c    ****     HAL_Delay(1000); //Delay 1 Seconds
- 298              		.loc 1 129 0 discriminator 1
- 299 00ae 0C48     		ldr	r0, .L13+32
- 300 00b0 2021     		movs	r1, #32
- 301 00b2 FFF7FEFF 		bl	HAL_GPIO_TogglePin
- 302              	.LVL18:
- 130:Src/main.c    ****     /* USER CODE BEGIN 3 */
- 303              		.loc 1 130 0 discriminator 1
- 304 00b6 4FF47A70 		mov	r0, #1000
- 305 00ba FFF7FEFF 		bl	HAL_Delay
- 306              	.LVL19:
- 132:Src/main.c    ****   /* USER CODE END 3 */
- 307              		.loc 1 132 0 discriminator 1
- 308 00be F6E7     		b	.L11
- 309              	.L14:
- 310              		.align	2
- 311              	.L13:
- 312 00c0 00000000 		.word	huart2
- 313 00c4 00000000 		.word	.LC0
- 314 00c8 00000000 		.word	.LANCHOR0
- 315 00cc 0C000000 		.word	.LC2
- 316 00d0 24000000 		.word	.LC3
- 317 00d4 58000000 		.word	.LC4
- 318 00d8 38000000 		.word	.LC5
- 319 00dc 48000000 		.word	.LC6
- 320 00e0 00000240 		.word	1073872896
-ARM GAS  /tmp/ccw273VV.s 			page 10
+ 245              	.LVL11:
+ 246 0050 0130     		adds	r0, r0, #1
+ 247 0052 0023     		movs	r3, #0
+ 248 0054 2354     		strb	r3, [r4, r0]
+ 108:Src/main.c    ****       HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFF);
+ 249              		.loc 1 108 0 discriminator 3
+ 250 0056 2046     		mov	r0, r4
+ 251 0058 FFF7FEFF 		bl	strlen
+ 252              	.LVL12:
+ 253 005c 0A23     		movs	r3, #10
+ 254 005e 2354     		strb	r3, [r4, r0]
+ 109:Src/main.c    ****   }
+ 255              		.loc 1 109 0 discriminator 3
+ 256 0060 2046     		mov	r0, r4
+ 257 0062 FFF7FEFF 		bl	strlen
+ 258              	.LVL13:
+ 259 0066 82B2     		uxth	r2, r0
+ 260 0068 4B48     		ldr	r0, .L18
+ 261 006a 2146     		mov	r1, r4
+ 262 006c 4FF6FF73 		movw	r3, #65535
+ 263 0070 FFF7FEFF 		bl	HAL_UART_Transmit
+ 264              	.LVL14:
+ 265              	.LBE5:
+ 104:Src/main.c    ****       char number[10];
+ 266              		.loc 1 104 0 discriminator 3
+ 267 0074 0135     		adds	r5, r5, #1
+ 268              	.LVL15:
+ 269              	.L9:
+ 104:Src/main.c    ****       char number[10];
+ 270              		.loc 1 104 0 is_stmt 0 discriminator 1
+ 271 0076 092D     		cmp	r5, #9
+ 272 0078 D6DD     		ble	.L10
+ 273 007a 0023     		movs	r3, #0
+ 274 007c 02E0     		b	.L11
+ 275              	.LVL16:
+ 276              	.L12:
+ 277              	.LBE4:
+ 278              	.LBB6:
+ 115:Src/main.c    ****   }
+ 279              		.loc 1 115 0 is_stmt 1 discriminator 3
+ 280 007e 1B70     		strb	r3, [r3]
+ 114:Src/main.c    ****       entropy[i] = i;
+ 281              		.loc 1 114 0 discriminator 3
+ 282 0080 0133     		adds	r3, r3, #1
+ 283              	.LVL17:
+ 284 0082 DBB2     		uxtb	r3, r3
+ 285              	.LVL18:
+ 286              	.L11:
+ 114:Src/main.c    ****       entropy[i] = i;
+ 287              		.loc 1 114 0 is_stmt 0 discriminator 1
+ 288 0084 2F2B     		cmp	r3, #47
+ 289 0086 FAD9     		bls	.L12
+ 290              	.LBE6:
+ 117:Src/main.c    ****   
+ 291              		.loc 1 117 0 is_stmt 1
+ 292 0088 0020     		movs	r0, #0
+ 293 008a 4649     		ldr	r1, .L18+12
+ARM GAS  /tmp/cc9p6RLl.s 			page 10
 
 
- 321              		.cfi_endproc
- 322              	.LFE141:
- 324              		.section	.text.Error_Handler,"ax",%progbits
- 325              		.align	2
- 326              		.global	Error_Handler
- 327              		.thumb
- 328              		.thumb_func
- 330              	Error_Handler:
- 331              	.LFB143:
- 179:Src/main.c    **** 
- 180:Src/main.c    **** /* USER CODE BEGIN 4 */
- 181:Src/main.c    **** 
- 182:Src/main.c    **** /* USER CODE END 4 */
- 183:Src/main.c    **** 
- 184:Src/main.c    **** /**
- 185:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
- 186:Src/main.c    ****   * @retval None
- 187:Src/main.c    ****   */
- 188:Src/main.c    **** void Error_Handler(void)
- 189:Src/main.c    **** {
- 332              		.loc 1 189 0
- 333              		.cfi_startproc
- 334              		@ args = 0, pretend = 0, frame = 0
- 335              		@ frame_needed = 0, uses_anonymous_args = 0
- 336              		@ link register save eliminated.
- 337 0000 7047     		bx	lr
- 338              		.cfi_endproc
- 339              	.LFE143:
- 341 0002 00BF     		.section	.rodata
- 342              		.align	2
- 343              		.set	.LANCHOR0,. + 0
- 344              	.LC1:
- 345 0000 48656C6C 		.ascii	"Hello Nucleo Fun!\012\015\000"
- 345      6F204E75 
- 345      636C656F 
- 345      2046756E 
- 345      210A0D00 
- 346 0014 00000000 		.space	1848
- 346      00000000 
- 346      00000000 
- 346      00000000 
- 346      00000000 
- 347              		.section	.rodata.str1.4,"aMS",%progbits,1
- 348              		.align	2
- 349              	.LC0:
- 350 0000 49276D20 		.ascii	"I'm alive\012\015\000"
- 350      616C6976 
- 350      650A0D00 
- 351              	.LC2:
- 352 000c 47656E65 		.ascii	"Generating keys...\012\015\000"
- 352      72617469 
- 352      6E67206B 
- 352      6579732E 
- 352      2E2E0A0D 
- 353 0021 000000   		.space	3
- 354              	.LC3:
- 355 0024 4572726F 		.ascii	"Error in keypair\012\015\000"
-ARM GAS  /tmp/ccw273VV.s 			page 11
+ 294 008c 0122     		movs	r2, #1
+ 295 008e FFF7FEFF 		bl	randombytes_init
+ 296              	.LVL19:
+ 129:Src/main.c    ****   unsigned char pk[CRYPTO_PUBLICKEYBYTES];
+ 297              		.loc 1 129 0
+ 298 0092 0DF29474 		addw	r4, sp, #1940
+ 299 0096 444D     		ldr	r5, .L18+16
+ 300              	.LVL20:
+ 301 0098 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 302 009a 0FC4     		stmia	r4!, {r0, r1, r2, r3}
+ 303 009c 2B68     		ldr	r3, [r5]
+ 304 009e 2360     		str	r3, [r4]
+ 305 00a0 0DF5F560 		add	r0, sp, #1960
+ 306 00a4 0021     		movs	r1, #0
+ 307 00a6 4FF4E762 		mov	r2, #1848
+ 308 00aa FFF7FEFF 		bl	memset
+ 309              	.LVL21:
+ 134:Src/main.c    ****   ans = crypto_kem_keypair(pk, sk);
+ 310              		.loc 1 134 0
+ 311 00ae 3A48     		ldr	r0, .L18
+ 312 00b0 3E49     		ldr	r1, .L18+20
+ 313 00b2 1422     		movs	r2, #20
+ 314 00b4 4FF6FF73 		movw	r3, #65535
+ 315 00b8 FFF7FEFF 		bl	HAL_UART_Transmit
+ 316              	.LVL22:
+ 135:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
+ 317              		.loc 1 135 0
+ 318 00bc 12A8     		add	r0, sp, #72
+ 319 00be 0CA9     		add	r1, sp, #48
+ 320 00c0 FFF7FEFF 		bl	crypto_kem_keypair
+ 321              	.LVL23:
+ 136:Src/main.c    ****   
+ 322              		.loc 1 136 0
+ 323 00c4 30B1     		cbz	r0, .L13
+ 136:Src/main.c    ****   
+ 324              		.loc 1 136 0 is_stmt 0 discriminator 1
+ 325 00c6 3448     		ldr	r0, .L18
+ 326              	.LVL24:
+ 327 00c8 3949     		ldr	r1, .L18+24
+ 328 00ca 1222     		movs	r2, #18
+ 329 00cc 4FF6FF73 		movw	r3, #65535
+ 330 00d0 FFF7FEFF 		bl	HAL_UART_Transmit
+ 331              	.LVL25:
+ 332              	.L13:
+ 138:Src/main.c    ****   ans = crypto_kem_enc(msg, ss, pk);
+ 333              		.loc 1 138 0 is_stmt 1
+ 334 00d4 3048     		ldr	r0, .L18
+ 335 00d6 3749     		ldr	r1, .L18+28
+ 336 00d8 0F22     		movs	r2, #15
+ 337 00da 4FF6FF73 		movw	r3, #65535
+ 338 00de FFF7FEFF 		bl	HAL_UART_Transmit
+ 339              	.LVL26:
+ 139:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
+ 340              		.loc 1 139 0
+ 341 00e2 0DF29470 		addw	r0, sp, #1940
+ 342 00e6 04A9     		add	r1, sp, #16
+ 343 00e8 12AA     		add	r2, sp, #72
+ARM GAS  /tmp/cc9p6RLl.s 			page 11
 
 
- 355      7220696E 
- 355      206B6579 
- 355      70616972 
- 355      0A0D00
- 356 0037 00       		.space	1
- 357              	.LC5:
- 358 0038 456E6372 		.ascii	"Encrypting...\012\015\000"
- 358      79707469 
- 358      6E672E2E 
- 358      2E0A0D00 
- 359              	.LC6:
- 360 0048 4572726F 		.ascii	"Error in enc\012\015\000"
- 360      7220696E 
- 360      20656E63 
- 360      0A0D00
- 361 0057 00       		.space	1
- 362              	.LC4:
- 363 0058 77657765 		.ascii	"wewewewe\000"
- 363      77657765 
- 363      00
- 364              		.text
- 365              	.Letext0:
- 366              		.file 2 "/usr/include/newlib/machine/_default_types.h"
- 367              		.file 3 "/usr/include/newlib/sys/_stdint.h"
- 368              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
- 369              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 370              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
- 371              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
- 372              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 373              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 374              		.file 10 "Inc/qc_ldpc_parameters.h"
- 375              		.file 11 "Drivers/CMSIS/Include/core_cm4.h"
- 376              		.file 12 "Inc/usart.h"
- 377              		.file 13 "Inc/gpio.h"
- 378              		.file 14 "Inc/api.h"
- 379              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 380              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  /tmp/ccw273VV.s 			page 12
+ 344 00ea FFF7FEFF 		bl	crypto_kem_enc
+ 345              	.LVL27:
+ 140:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFF);
+ 346              		.loc 1 140 0
+ 347 00ee 30B1     		cbz	r0, .L14
+ 140:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFF);
+ 348              		.loc 1 140 0 is_stmt 0 discriminator 1
+ 349 00f0 2948     		ldr	r0, .L18
+ 350              	.LVL28:
+ 351 00f2 3149     		ldr	r1, .L18+32
+ 352 00f4 0E22     		movs	r2, #14
+ 353 00f6 4FF6FF73 		movw	r3, #65535
+ 354 00fa FFF7FEFF 		bl	HAL_UART_Transmit
+ 355              	.LVL29:
+ 356              	.L14:
+ 141:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
+ 357              		.loc 1 141 0 is_stmt 1
+ 358 00fe 264C     		ldr	r4, .L18
+ 359 0100 2046     		mov	r0, r4
+ 360 0102 2E49     		ldr	r1, .L18+36
+ 361 0104 2022     		movs	r2, #32
+ 362 0106 4FF6FF73 		movw	r3, #65535
+ 363 010a FFF7FEFF 		bl	HAL_UART_Transmit
+ 364              	.LVL30:
+ 142:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+ 365              		.loc 1 142 0
+ 366 010e 2046     		mov	r0, r4
+ 367 0110 0DF29471 		addw	r1, sp, #1940
+ 368 0114 40F24C72 		movw	r2, #1868
+ 369 0118 4FF6FF73 		movw	r3, #65535
+ 370 011c FFF7FEFF 		bl	HAL_UART_Transmit
+ 371              	.LVL31:
+ 143:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+ 372              		.loc 1 143 0
+ 373 0120 2046     		mov	r0, r4
+ 374 0122 2749     		ldr	r1, .L18+40
+ 375 0124 2D22     		movs	r2, #45
+ 376 0126 4FF6FF73 		movw	r3, #65535
+ 377 012a FFF7FEFF 		bl	HAL_UART_Transmit
+ 378              	.LVL32:
+ 144:Src/main.c    ****   
+ 379              		.loc 1 144 0
+ 380 012e 2046     		mov	r0, r4
+ 381 0130 04A9     		add	r1, sp, #16
+ 382 0132 2022     		movs	r2, #32
+ 383 0134 4FF6FF73 		movw	r3, #65535
+ 384 0138 FFF7FEFF 		bl	HAL_UART_Transmit
+ 385              	.LVL33:
+ 146:Src/main.c    ****   ans = crypto_kem_dec(ss, msg, sk);
+ 386              		.loc 1 146 0
+ 387 013c 2046     		mov	r0, r4
+ 388 013e 2149     		ldr	r1, .L18+44
+ 389 0140 0F22     		movs	r2, #15
+ 390 0142 4FF6FF73 		movw	r3, #65535
+ 391 0146 FFF7FEFF 		bl	HAL_UART_Transmit
+ 392              	.LVL34:
+ 147:Src/main.c    ****   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFF);
+ARM GAS  /tmp/cc9p6RLl.s 			page 12
+
+
+ 393              		.loc 1 147 0
+ 394 014a 04A8     		add	r0, sp, #16
+ 395 014c 0DF29471 		addw	r1, sp, #1940
+ 396 0150 0CAA     		add	r2, sp, #48
+ 397 0152 FFF7FEFF 		bl	crypto_kem_dec
+ 398              	.LVL35:
+ 148:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+ 399              		.loc 1 148 0
+ 400 0156 30B1     		cbz	r0, .L15
+ 148:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
+ 401              		.loc 1 148 0 is_stmt 0 discriminator 1
+ 402 0158 2046     		mov	r0, r4
+ 403              	.LVL36:
+ 404 015a 1B49     		ldr	r1, .L18+48
+ 405 015c 0E22     		movs	r2, #14
+ 406 015e 4FF6FF73 		movw	r3, #65535
+ 407 0162 FFF7FEFF 		bl	HAL_UART_Transmit
+ 408              	.LVL37:
+ 409              	.L15:
+ 149:Src/main.c    ****   HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+ 410              		.loc 1 149 0 is_stmt 1
+ 411 0166 0C4C     		ldr	r4, .L18
+ 412 0168 2046     		mov	r0, r4
+ 413 016a 1549     		ldr	r1, .L18+40
+ 414 016c 2D22     		movs	r2, #45
+ 415 016e 4FF6FF73 		movw	r3, #65535
+ 416 0172 FFF7FEFF 		bl	HAL_UART_Transmit
+ 417              	.LVL38:
+ 150:Src/main.c    ****   
+ 418              		.loc 1 150 0
+ 419 0176 2046     		mov	r0, r4
+ 420 0178 04A9     		add	r1, sp, #16
+ 421 017a 2022     		movs	r2, #32
+ 422 017c 4FF6FF73 		movw	r3, #65535
+ 423 0180 FFF7FEFF 		bl	HAL_UART_Transmit
+ 424              	.LVL39:
+ 425              	.L16:
+ 159:Src/main.c    ****     HAL_Delay(1000); //Delay 1 Seconds
+ 426              		.loc 1 159 0 discriminator 1
+ 427 0184 1148     		ldr	r0, .L18+52
+ 428 0186 2021     		movs	r1, #32
+ 429 0188 FFF7FEFF 		bl	HAL_GPIO_TogglePin
+ 430              	.LVL40:
+ 160:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 431              		.loc 1 160 0 discriminator 1
+ 432 018c 4FF47A70 		mov	r0, #1000
+ 433 0190 FFF7FEFF 		bl	HAL_Delay
+ 434              	.LVL41:
+ 162:Src/main.c    ****   /* USER CODE END 3 */
+ 435              		.loc 1 162 0 discriminator 1
+ 436 0194 F6E7     		b	.L16
+ 437              	.L19:
+ 438 0196 00BF     		.align	2
+ 439              	.L18:
+ 440 0198 00000000 		.word	huart2
+ 441 019c 00000000 		.word	.LC0
+ 442 01a0 D34D6210 		.word	274877907
+ARM GAS  /tmp/cc9p6RLl.s 			page 13
+
+
+ 443 01a4 0C000000 		.word	.LC1
+ 444 01a8 00000000 		.word	.LANCHOR0
+ 445 01ac 40000000 		.word	.LC3
+ 446 01b0 58000000 		.word	.LC4
+ 447 01b4 6C000000 		.word	.LC5
+ 448 01b8 7C000000 		.word	.LC6
+ 449 01bc 8C000000 		.word	.LC7
+ 450 01c0 B0000000 		.word	.LC8
+ 451 01c4 E0000000 		.word	.LC9
+ 452 01c8 F0000000 		.word	.LC10
+ 453 01cc 00000240 		.word	1073872896
+ 454              		.cfi_endproc
+ 455              	.LFE141:
+ 457              		.section	.text.Error_Handler,"ax",%progbits
+ 458              		.align	2
+ 459              		.global	Error_Handler
+ 460              		.thumb
+ 461              		.thumb_func
+ 463              	Error_Handler:
+ 464              	.LFB143:
+ 209:Src/main.c    **** 
+ 210:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 211:Src/main.c    **** 
+ 212:Src/main.c    **** /* USER CODE END 4 */
+ 213:Src/main.c    **** 
+ 214:Src/main.c    **** /**
+ 215:Src/main.c    ****   * @brief  This function is executed in case of error occurrence.
+ 216:Src/main.c    ****   * @retval None
+ 217:Src/main.c    ****   */
+ 218:Src/main.c    **** void Error_Handler(void)
+ 219:Src/main.c    **** {
+ 465              		.loc 1 219 0
+ 466              		.cfi_startproc
+ 467              		@ args = 0, pretend = 0, frame = 0
+ 468              		@ frame_needed = 0, uses_anonymous_args = 0
+ 469              		@ link register save eliminated.
+ 470 0000 7047     		bx	lr
+ 471              		.cfi_endproc
+ 472              	.LFE143:
+ 474 0002 00BF     		.section	.rodata
+ 475              		.align	2
+ 476              		.set	.LANCHOR0,. + 0
+ 477              	.LC2:
+ 478 0000 48656C6C 		.ascii	"Hello Nucleo Fun!\012\015\000"
+ 478      6F204E75 
+ 478      636C656F 
+ 478      2046756E 
+ 478      210A0D00 
+ 479 0014 00000000 		.space	1848
+ 479      00000000 
+ 479      00000000 
+ 479      00000000 
+ 479      00000000 
+ 480              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 481              		.align	2
+ 482              	.LC0:
+ 483 0000 49276D20 		.ascii	"I'm alive\012\015\000"
+ARM GAS  /tmp/cc9p6RLl.s 			page 14
+
+
+ 483      616C6976 
+ 483      650A0D00 
+ 484              	.LC1:
+ 485 000c 41414141 		.ascii	"AAAAAAAAAAgigkhkhctdvgbjknhjnbvAAAAAAAAAAAAAAAAA\000"
+ 485      41414141 
+ 485      41416769 
+ 485      676B686B 
+ 485      68637464 
+ 486 003d 000000   		.space	3
+ 487              	.LC3:
+ 488 0040 0A0D4765 		.ascii	"\012\015Generating keys...\000"
+ 488      6E657261 
+ 488      74696E67 
+ 488      206B6579 
+ 488      732E2E2E 
+ 489 0055 000000   		.space	3
+ 490              	.LC4:
+ 491 0058 0A0D4572 		.ascii	"\012\015Error in keypair\000"
+ 491      726F7220 
+ 491      696E206B 
+ 491      65797061 
+ 491      697200
+ 492 006b 00       		.space	1
+ 493              	.LC5:
+ 494 006c 0A0D456E 		.ascii	"\012\015Encrypting...\000"
+ 494      63727970 
+ 494      74696E67 
+ 494      2E2E2E00 
+ 495              	.LC6:
+ 496 007c 0A0D4572 		.ascii	"\012\015Error in enc\000"
+ 496      726F7220 
+ 496      696E2065 
+ 496      6E6300
+ 497 008b 00       		.space	1
+ 498              	.LC7:
+ 499 008c 0A0D4369 		.ascii	"\012\015Ciphertext Encrypt(e, sk) is: \000"
+ 499      70686572 
+ 499      74657874 
+ 499      20456E63 
+ 499      72797074 
+ 500 00ad 000000   		.space	3
+ 501              	.LC8:
+ 502 00b0 0A0D5368 		.ascii	"\012\015Shared secret Hash(e) - or Hash(c.k) - is: "
+ 502      61726564 
+ 502      20736563 
+ 502      72657420 
+ 502      48617368 
+ 503 00dd 00       		.ascii	"\000"
+ 504 00de 0000     		.space	2
+ 505              	.LC9:
+ 506 00e0 0A0D4465 		.ascii	"\012\015Decrypting...\000"
+ 506      63727970 
+ 506      74696E67 
+ 506      2E2E2E00 
+ 507              	.LC10:
+ 508 00f0 0A0D4572 		.ascii	"\012\015Error in dec\000"
+ 508      726F7220 
+ARM GAS  /tmp/cc9p6RLl.s 			page 15
+
+
+ 508      696E2064 
+ 508      656300
+ 509              		.text
+ 510              	.Letext0:
+ 511              		.file 2 "/usr/include/newlib/machine/_default_types.h"
+ 512              		.file 3 "/usr/include/newlib/sys/_stdint.h"
+ 513              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
+ 514              		.file 5 "/usr/lib/gcc/arm-none-eabi/4.9.3/include/stddef.h"
+ 515              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 516              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"
+ 517              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"
+ 518              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 519              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 520              		.file 11 "Inc/qc_ldpc_parameters.h"
+ 521              		.file 12 "Drivers/CMSIS/Include/core_cm4.h"
+ 522              		.file 13 "Inc/usart.h"
+ 523              		.file 14 "/usr/include/newlib/string.h"
+ 524              		.file 15 "/usr/include/newlib/stdlib.h"
+ 525              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 526              		.file 17 "Inc/gpio.h"
+ 527              		.file 18 "Inc/rng.h"
+ 528              		.file 19 "Inc/api.h"
+ 529              		.file 20 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ARM GAS  /tmp/cc9p6RLl.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 main.c
-     /tmp/ccw273VV.s:20     .text.Delay:0000000000000000 $t
-     /tmp/ccw273VV.s:25     .text.Delay:0000000000000000 Delay
-     /tmp/ccw273VV.s:55     .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccw273VV.s:60     .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccw273VV.s:176    .text.SystemClock_Config:000000000000009c $d
-     /tmp/ccw273VV.s:182    .text.main:0000000000000000 $t
-     /tmp/ccw273VV.s:187    .text.main:0000000000000000 main
-     /tmp/ccw273VV.s:312    .text.main:00000000000000c0 $d
-     /tmp/ccw273VV.s:325    .text.Error_Handler:0000000000000000 $t
-     /tmp/ccw273VV.s:330    .text.Error_Handler:0000000000000000 Error_Handler
-     /tmp/ccw273VV.s:342    .rodata:0000000000000000 $d
-     /tmp/ccw273VV.s:348    .rodata.str1.4:0000000000000000 $d
+     /tmp/cc9p6RLl.s:20     .text.Delay:0000000000000000 $t
+     /tmp/cc9p6RLl.s:25     .text.Delay:0000000000000000 Delay
+     /tmp/cc9p6RLl.s:55     .text.SystemClock_Config:0000000000000000 $t
+     /tmp/cc9p6RLl.s:60     .text.SystemClock_Config:0000000000000000 SystemClock_Config
+     /tmp/cc9p6RLl.s:176    .text.SystemClock_Config:000000000000009c $d
+     /tmp/cc9p6RLl.s:182    .text.main:0000000000000000 $t
+     /tmp/cc9p6RLl.s:187    .text.main:0000000000000000 main
+     /tmp/cc9p6RLl.s:440    .text.main:0000000000000198 $d
+     /tmp/cc9p6RLl.s:458    .text.Error_Handler:0000000000000000 $t
+     /tmp/cc9p6RLl.s:463    .text.Error_Handler:0000000000000000 Error_Handler
+     /tmp/cc9p6RLl.s:475    .rodata:0000000000000000 $d
+     /tmp/cc9p6RLl.s:481    .rodata.str1.4:0000000000000000 $d
                      .debug_frame:0000000000000010 $d
                            .group:0000000000000000 wm4.0.20963d46ba5d8e371b8630ece00f11ec
                            .group:0000000000000000 wm4.stm32f4xx_hal_conf.h.24.d14dd899dbfa16d6dc9a7b8d5f0b81d2
@@ -698,7 +924,7 @@ DEFINED SYMBOLS
                            .group:0000000000000000 wm4._ansi.h.23.9f8fcfa20193763fcf364fb91705c94b
                            .group:0000000000000000 wm4.lock.h.2.9bc98482741e5e2a9450b12934a684ea
                            .group:0000000000000000 wm4._types.h.54.d3d34a3b7f3cc230cd159baf022b4b08
-ARM GAS  /tmp/ccw273VV.s 			page 13
+ARM GAS  /tmp/cc9p6RLl.s 			page 17
 
 
                            .group:0000000000000000 wm4.stddef.h.158.61317cdbfb4026324507d123a50b0fd6
@@ -706,19 +932,26 @@ DEFINED SYMBOLS
                            .group:0000000000000000 wm4.cdefs.h.47.55832cb26e4a21cedaa9b1b3b922c6b1
                            .group:0000000000000000 wm4.string.h.15.dab3980bf35408a4c507182805e2de3a
                            .group:0000000000000000 wm4.stddef.h.158.a7efb00f6cbc6f43213b50e183c9830c
+                           .group:0000000000000000 wm4.time.h.8.2930fe070f4a8096b07db9159698c8e3
+                           .group:0000000000000000 wm4.time.h.2.4581ce0ffb6627cfc02162c94bf846c9
+                           .group:0000000000000000 wm4.time.h.24.3660bbb2d0a4c7457ff52ba3ada4c166
+                           .group:0000000000000000 wm4.types.h.24.b2be5f53932a9c9d07787288b29b6d75
+                           .group:0000000000000000 wm4.types.h.2.e9cec8c90ab35f77d9f499e06ae02400
+                           .group:0000000000000000 wm4.types.h.82.82b71f3f44c70e3a459d0f66642b05eb
+                           .group:0000000000000000 wm4.timespec.h.41.d855182eb0e690443ab8651bcedca6e1
+                           .group:0000000000000000 wm4.time.h.217.2f437ac2cf06537c84703833b0977905
+                           .group:0000000000000000 wm4.stdlib.h.13.4ed386f5c1a80d71e72172885d946ef2
+                           .group:0000000000000000 wm4.stdlib.h.54.4fb06e985dc2cdf07f3ef03d3ed01397
+                           .group:0000000000000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
+                           .group:0000000000000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
+                           .group:0000000000000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
+                           .group:0000000000000000 wm4.stdio.h.68.ff6d7571d3ad75c55f15e26dbaa81e35
                            .group:0000000000000000 wm4.qc_ldpc_parameters.h.37.6a7dc7a81c3b4c6a57df61d48c0f4546
                            .group:0000000000000000 wm4.inttypes.h.14.d76379e1484484ef6b6b246cc782d8dc
                            .group:0000000000000000 wm4.inttypes.h.23.73ff1ea04b6018cd02b26f6fdc94fae9
                            .group:0000000000000000 wm4.limits.h.25.5fc8418077d2a1b3fdafee07d2348450
                            .group:0000000000000000 wm4.gf2x_limbs.h.44.4ba8ea293ca87ae1eb808c65b3f7859c
                            .group:0000000000000000 wm4.gf2x_arith.h.78.84d3114adf056aa03d6e1720f5f09797
-                           .group:0000000000000000 wm4.stdio.h.27.3fc80220048df77954e38daec3bb9670
-                           .group:0000000000000000 wm4.stdarg.h.34.3a23a216c0c293b3d2ea2e89281481e6
-                           .group:0000000000000000 wm4.types.h.24.b2be5f53932a9c9d07787288b29b6d75
-                           .group:0000000000000000 wm4.types.h.2.e9cec8c90ab35f77d9f499e06ae02400
-                           .group:0000000000000000 wm4.types.h.82.82b71f3f44c70e3a459d0f66642b05eb
-                           .group:0000000000000000 wm4.stdio.h.2.4aa87247282eca6c8f36f9de33d8df1a
-                           .group:0000000000000000 wm4.stdio.h.68.ff6d7571d3ad75c55f15e26dbaa81e35
                            .group:0000000000000000 wm4.rng.h.43.d878a412a37b8758e9c11dbf27ed5812
                            .group:0000000000000000 wm4.gf2x_arith_mod_xPplusOne.h.43.dd456d3b85305b5c168d761e87b26291
                            .group:0000000000000000 wm4.api.h.39.461facc9facebdb29c71caf95c7c4c98
@@ -730,9 +963,14 @@ HAL_Init
 MX_GPIO_Init
 MX_USART2_UART_Init
 HAL_UART_Transmit
+rand
+itoa
+strlen
+randombytes_init
 memset
 crypto_kem_keypair
 crypto_kem_enc
+crypto_kem_dec
 HAL_GPIO_TogglePin
 HAL_Delay
 huart2
