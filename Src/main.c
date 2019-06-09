@@ -65,6 +65,15 @@ void Delay(__IO uint32_t nCount)
 {
     while (nCount--);
 }
+
+void printBytes(unsigned char *data, int length) {
+    char buffer[16];
+    int i;
+    for (i = 0; i < length; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i]), 0xFFFFFF);
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -99,27 +108,30 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   char *test = "I'm alive\n\r";
-  HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFFFF);
   
+  srand(0);
   for (int i = 0; i < 10; ++i) {
       char number[10];
       itoa(rand() % 1000, number, 10);
       number[strlen(number)+1] = 0;
       number[strlen(number)] = '\n';
-      HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFF);
+      HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFFFF);
   }
   
-  unsigned char *entropy;
-  unsigned char *custom = "AAAAAAAAAAgigkhkhctdvgbjknhjnbvAAAAAAAAAAAAAAAAA";
+  unsigned char entropy[48];
+  unsigned char custom[48] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
   for (unsigned char i = 0; i < 48; ++i) {
-      entropy[i] = i;
+      entropy[i] = i & 0xff;
   }
   randombytes_init(entropy, custom, 1);
   
   char *PAIR = "\n\rGenerating keys...";
+  char *PK = "\n\rPublic key is: ";
+  char *SK = "\n\rPrivate key is: ";
   char *ENC = "\n\rEncrypting...";
   char *DEC = "\n\rDecrypting...";
-  char *SHOW_CTX = "\n\rCiphertext Encrypt(e, sk) is: ";
+  char *SHOW_CTX = "\n\rCiphertext Encrypt(e, pk) is: ";
   char *SHOW_SS = "\n\rShared secret Hash(e) - or Hash(c.k) - is: ";
   char *ERR_PAIR = "\n\rError in keypair";
   char *ERR_ENC = "\n\rError in enc";
@@ -131,23 +143,27 @@ int main(void)
   unsigned char sk[CRYPTO_SECRETKEYBYTES];
   unsigned char ss[CRYPTO_BYTES];
   
-  HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFFFF);
   ans = crypto_kem_keypair(pk, sk);
-  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFF);
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)PK, strlen(PK), 0xFFFFFF);
+  printBytes(pk, CRYPTO_PUBLICKEYBYTES);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SK, strlen(SK), 0xFFFFFF);
+  printBytes(sk, CRYPTO_SECRETKEYBYTES);
   
-  HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFFFF);
   ans = crypto_kem_enc(msg, ss, pk);
-  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)msg, CRYPTO_CIPHERTEXTBYTES, 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFFFF);
+  printBytes(msg, CRYPTO_CIPHERTEXTBYTES);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFFFF);
+  printBytes(ss, CRYPTO_BYTES);
   
-  HAL_UART_Transmit(&huart2, (uint8_t*)DEC, strlen(DEC), 0xFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)DEC, strlen(DEC), 0xFFFFFF);
   ans = crypto_kem_dec(ss, msg, sk);
-  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFF);
-  HAL_UART_Transmit(&huart2, (uint8_t*)ss, CRYPTO_BYTES, 0xFFFF);
+  if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFFFF);
+  HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFFFF);
+  printBytes(ss, CRYPTO_BYTES);
   
   /* USER CODE END 2 */
 

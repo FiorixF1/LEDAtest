@@ -57,7 +57,7 @@ void initialize_pseudo_random_generator_seed(int ac, char *av[])
       srand(atoi(av[1]));
    else {
       struct timespec seedValue;
-      clock_gettime(CLOCK_REALTIME, &seedValue);
+      //clock_gettime(CLOCK_REALTIME, &seedValue);
       srand(seedValue.tv_nsec);
    } // end else-if
    unsigned char pseudo_entropy[48];

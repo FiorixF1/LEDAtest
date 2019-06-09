@@ -53,7 +53,7 @@ endif
 
   CC = arm-none-eabi-gcc 
 
-  CFLAGS = -DCATEGORY=$(SL) -DN0=$(N0) -DCPU_WORD_BITS=64 \
+  CFLAGS = -DCATEGORY=$(SL) -DN0=$(N0) -DCPU_WORD_BITS=32 \
            -std=c11 -Wall -pedantic -Wmaybe-uninitialized -Wuninitialized \
 	       -O3 -g3 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp \
            --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lm -lrdimon -lnosys -Wl,--end-group

@@ -13,12 +13,14 @@ sudo screen /dev/ttyACM0 115200
 libkeccak l'ho preso da qui, serve xsltproc
     git clone https://github.com/gvanas/KeccakCodePackage.git
     make | grep libkeccak
-    make ARMv7M/libkeccak.a (MA DA GROSSI PROBLEMI)
+    make reference/libkeccak.a
 Qui ti avrà generato libkeccak.a e la cartella degli header
 
 
 
-Compila libkeccak
+Cosa ho fatto finora:
+1) Con CubeMX ho generato uno stub di codice con UART e altre periferiche per poter lavorare.
+2) Compilato libkeccak
     Dentro ToTargetMakefile.xsl modifica:
         MAKE ?= gmake
         CC = arm-none-eabi-gcc
@@ -31,20 +33,35 @@ Compila libkeccak
         <gcc>-mcpu=cortex-m4</gcc>
         <gcc>-mthumb</gcc>
         <gcc>-mfpu=fpv4-sp-d16</gcc>
-        <gcc>-mfloat-abi=softfp</gcc> 
-    Dentro libkeccak.a.target ho cancellato beatamente i moduli che non fanno compilare e vaffanculo
-        E non dovrebbe dare problemi perche' SHA-3 non li usa
-    COMPILA CON reference/libkeccak.a, quella non dovrebbe dare problemi perche' sostanzialmente compila senza usar ei file ottimizzati.
-    In quel caso devi solo mettere in giro le flag giuste e il compilatore ARM, poi funziona tutto.
-Modificare Makefile per LEDAcrypt: inserisci GCC per ARM, flag per FPU, -std=c11
-Compila LEDAcrypt
+        <gcc>-mfloat-abi=softfp</gcc>
+    Compila con "make reference/libkeccak.a", quella non dovrebbe dare problemi perche' sostanzialmente compila senza usare i file ottimizzati.
+        In quel caso devi solo mettere in giro le flag giuste e il compilatore ARM, poi funziona tutto.
+    Ottieni libkeccak.a e libkeccak.a.headers: copiali dentro LEDAkem in include
+3) Compilato LEDAcrypt gia' con i parametri necessari
+    Modifica il Makefile per LEDAcrypt: inserisci arm-none-eabi-gcc, flag per il processore, -std=c11, CPU WORD BITS 32 !
+        CC = arm-none-eabi-gcc 
+
+        CFLAGS = -DCATEGORY=$(SL) -DN0=$(N0) -DCPU_WORD_BITS=32 \
+                 -std=c11 -Wall -pedantic -Wmaybe-uninitialized -Wuninitialized \
+                 -O3 -g3 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp \
+                 --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lm -lrdimon -lnosys -Wl,--end-group
+        LDFLAGS = -lm -lkeccak
+        INCLUDES = -I./include -I./include/libkeccak.a.headers
+        SRCDIR = library
+        OBJDIR = bin
+4) Modificato il make di CubeMX per inserirci le librerie varie, cambiato la FPU da hard a soft, inserito i parametri di LEDAcrypt, guardalo insomma
+5) Fatto un main per testare
+
+Situazione attuale:
+- Le primitive funzionano
+- Al momento non genero numeri casuali
 
 
 
-
+OpenOCD non installarlo con apt-get perche' non funziona nulla, ricompilalo da zero da Github https://github.com/ntfreak/openocd
 openocd -f tcl/board/st_nucleo_f4.cfg
 
 target remote :3333
-file ./build/LEDAtest.elf
+file ./build/LEDAtest.elf <- per avere simboli di debug
 monitor reset halt
 
