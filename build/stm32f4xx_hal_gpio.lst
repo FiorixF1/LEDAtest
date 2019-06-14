@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccTPvOh4.s 			page 1
+ARM GAS  /tmp/cciMv91h.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   [..]   
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   All GPIO pins have weak internal pull-up and pull-down resistors, which can be 
   31:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   activated or not.
-ARM GAS  /tmp/ccTPvOh4.s 			page 2
+ARM GAS  /tmp/cciMv91h.s 			page 2
 
 
   32:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
   86:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         priority over the GPIO function.
   87:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   
   88:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****     (#) The HSE oscillator pins OSC_IN/OSC_OUT can be used as 
-ARM GAS  /tmp/ccTPvOh4.s 			page 3
+ARM GAS  /tmp/cciMv91h.s 			page 3
 
 
   89:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         general purpose PH0 and PH1, respectively, when the HSE oscillator is off. 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  143:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** /** @defgroup GPIO_Exported_Functions GPIO Exported Functions
  144:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @{
  145:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   */
-ARM GAS  /tmp/ccTPvOh4.s 			page 4
+ARM GAS  /tmp/cciMv91h.s 			page 4
 
 
  146:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   assert_param(IS_GPIO_PULL(GPIO_Init->Pull));
  183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
  184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   /* Configure the port pins */
-ARM GAS  /tmp/ccTPvOh4.s 			page 5
+ARM GAS  /tmp/cciMv91h.s 			page 5
 
 
  185:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   for(position = 0U; position < GPIO_NUMBER; position++)
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
   82              	.LVL6:
  203:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp |= ((uint32_t)(GPIO_Init->Alternate) << (((uint32_t)position & 0x07U) * 4U));
   83              		.loc 1 203 0
-ARM GAS  /tmp/ccTPvOh4.s 			page 6
+ARM GAS  /tmp/cciMv91h.s 			page 6
 
 
   84 0042 0D69     		ldr	r5, [r1, #16]
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  219:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         /* Configure the IO Speed */
  220:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp = GPIOx->OSPEEDR; 
  123              		.loc 1 220 0
-ARM GAS  /tmp/ccTPvOh4.s 			page 7
+ARM GAS  /tmp/cciMv91h.s 			page 7
 
 
  124 007e 8668     		ldr	r6, [r0, #8]
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  163              	.LVL23:
  236:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****       GPIOx->PUPDR = temp;
  164              		.loc 1 236 0
-ARM GAS  /tmp/ccTPvOh4.s 			page 8
+ARM GAS  /tmp/cciMv91h.s 			page 8
 
 
  165 00b0 C560     		str	r5, [r0, #12]
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  208 00fe 19D0     		beq	.L22
  209              		.loc 1 247 0 discriminator 5
  210 0100 05F58065 		add	r5, r5, #1024
-ARM GAS  /tmp/ccTPvOh4.s 			page 9
+ARM GAS  /tmp/cciMv91h.s 			page 9
 
 
  211 0104 A842     		cmp	r0, r5
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  261 014c 1568     		ldr	r5, [r2]
  262              	.LVL30:
  252:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         temp &= ~((uint32_t)iocurrent);
-ARM GAS  /tmp/ccTPvOh4.s 			page 10
+ARM GAS  /tmp/cciMv91h.s 			page 10
 
 
  263              		.loc 1 252 0 discriminator 28
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  300              	.LVL37:
  270:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****         if((GPIO_Init->Mode & RISING_EDGE) == RISING_EDGE)
  301              		.loc 1 270 0
-ARM GAS  /tmp/ccTPvOh4.s 			page 11
+ARM GAS  /tmp/cciMv91h.s 			page 11
 
 
  302 0180 4F68     		ldr	r7, [r1, #4]
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  286:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** }
  339              		.loc 1 286 0 is_stmt 1
  340 01ac 02B0     		add	sp, sp, #8
-ARM GAS  /tmp/ccTPvOh4.s 			page 12
+ARM GAS  /tmp/cciMv91h.s 			page 12
 
 
  341              	.LCFI2:
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  307:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   for(position = 0U; position < GPIO_NUMBER; position++)
  377              		.loc 1 307 0
  378 0002 0023     		movs	r3, #0
-ARM GAS  /tmp/ccTPvOh4.s 			page 13
+ARM GAS  /tmp/cciMv91h.s 			page 13
 
 
  379 0004 7AE0     		b	.L31
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  421              		.loc 1 319 0 discriminator 7
  422 004e 07F58067 		add	r7, r7, #1024
  423 0052 B842     		cmp	r0, r7
-ARM GAS  /tmp/ccTPvOh4.s 			page 14
+ARM GAS  /tmp/cciMv91h.s 			page 14
 
 
  424 0054 0DD0     		beq	.L46
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  471 00a2 E443     		mvns	r4, r4
  472              	.LVL53:
  473 00a4 2640     		ands	r6, r6, r4
-ARM GAS  /tmp/ccTPvOh4.s 			page 15
+ARM GAS  /tmp/cciMv91h.s 			page 15
 
 
  474 00a6 2E60     		str	r6, [r5]
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  343:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
  344:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****       /* Configure the default value IO Output Type */
  345:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****       GPIOx->OTYPER  &= ~(GPIO_OTYPER_OT_0 << position) ;
-ARM GAS  /tmp/ccTPvOh4.s 			page 16
+ARM GAS  /tmp/cciMv91h.s 			page 16
 
 
  512              		.loc 1 345 0
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  364:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
  365:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** @endverbatim
  366:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @{
-ARM GAS  /tmp/ccTPvOh4.s 			page 17
+ARM GAS  /tmp/cciMv91h.s 			page 17
 
 
  367:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   */
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  576              		.thumb_func
  578              	HAL_GPIO_WritePin:
  579              	.LFB133:
-ARM GAS  /tmp/ccTPvOh4.s 			page 18
+ARM GAS  /tmp/cciMv91h.s 			page 18
 
 
  394:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  604              		.thumb_func
  606              	HAL_GPIO_TogglePin:
  607              	.LFB134:
-ARM GAS  /tmp/ccTPvOh4.s 			page 19
+ARM GAS  /tmp/cciMv91h.s 			page 19
 
 
  425:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   }
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  449:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** 
  450:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** /**
  451:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @brief  Locks GPIO Pins configuration registers.
-ARM GAS  /tmp/ccTPvOh4.s 			page 20
+ARM GAS  /tmp/cciMv91h.s 			page 20
 
 
  452:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @note   The locked registers are GPIOx_MODER, GPIOx_OTYPER, GPIOx_OSPEEDR,
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  479:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****  if((GPIOx->LCKR & GPIO_LCKR_LCKK) != RESET)
  667              		.loc 1 479 0
  668 001c C369     		ldr	r3, [r0, #28]
-ARM GAS  /tmp/ccTPvOh4.s 			page 21
+ARM GAS  /tmp/cciMv91h.s 			page 21
 
 
  669 001e 13F4803F 		tst	r3, #65536
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  507:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   * @retval None
  508:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c ****   */
  509:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** __weak void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-ARM GAS  /tmp/ccTPvOh4.s 			page 22
+ARM GAS  /tmp/cciMv91h.s 			page 22
 
 
  510:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c **** {
@@ -1318,39 +1318,39 @@ ARM GAS  /tmp/ccTPvOh4.s 			page 1
  749              		.file 2 "/usr/include/newlib/machine/_default_types.h"
  750              		.file 3 "/usr/include/newlib/sys/_stdint.h"
  751              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"
-ARM GAS  /tmp/ccTPvOh4.s 			page 23
+ARM GAS  /tmp/cciMv91h.s 			page 23
 
 
  752              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
  753              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
  754              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  755              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  /tmp/ccTPvOh4.s 			page 24
+ARM GAS  /tmp/cciMv91h.s 			page 24
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_gpio.c
-     /tmp/ccTPvOh4.s:20     .text.HAL_GPIO_Init:0000000000000000 $t
-     /tmp/ccTPvOh4.s:25     .text.HAL_GPIO_Init:0000000000000000 HAL_GPIO_Init
-     /tmp/ccTPvOh4.s:348    .text.HAL_GPIO_Init:00000000000001b4 $d
-     /tmp/ccTPvOh4.s:356    .text.HAL_GPIO_DeInit:0000000000000000 $t
-     /tmp/ccTPvOh4.s:361    .text.HAL_GPIO_DeInit:0000000000000000 HAL_GPIO_DeInit
-     /tmp/ccTPvOh4.s:534    .text.HAL_GPIO_DeInit:0000000000000104 $d
-     /tmp/ccTPvOh4.s:541    .text.HAL_GPIO_ReadPin:0000000000000000 $t
-     /tmp/ccTPvOh4.s:546    .text.HAL_GPIO_ReadPin:0000000000000000 HAL_GPIO_ReadPin
-     /tmp/ccTPvOh4.s:573    .text.HAL_GPIO_WritePin:0000000000000000 $t
-     /tmp/ccTPvOh4.s:578    .text.HAL_GPIO_WritePin:0000000000000000 HAL_GPIO_WritePin
-     /tmp/ccTPvOh4.s:601    .text.HAL_GPIO_TogglePin:0000000000000000 $t
-     /tmp/ccTPvOh4.s:606    .text.HAL_GPIO_TogglePin:0000000000000000 HAL_GPIO_TogglePin
-     /tmp/ccTPvOh4.s:633    .text.HAL_GPIO_LockPin:0000000000000000 $t
-     /tmp/ccTPvOh4.s:638    .text.HAL_GPIO_LockPin:0000000000000000 HAL_GPIO_LockPin
-     /tmp/ccTPvOh4.s:691    .text.HAL_GPIO_EXTI_Callback:0000000000000000 $t
-     /tmp/ccTPvOh4.s:696    .text.HAL_GPIO_EXTI_Callback:0000000000000000 HAL_GPIO_EXTI_Callback
-     /tmp/ccTPvOh4.s:709    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000000 $t
-     /tmp/ccTPvOh4.s:714    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000000 HAL_GPIO_EXTI_IRQHandler
-     /tmp/ccTPvOh4.s:743    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000014 $d
+     /tmp/cciMv91h.s:20     .text.HAL_GPIO_Init:0000000000000000 $t
+     /tmp/cciMv91h.s:25     .text.HAL_GPIO_Init:0000000000000000 HAL_GPIO_Init
+     /tmp/cciMv91h.s:348    .text.HAL_GPIO_Init:00000000000001b4 $d
+     /tmp/cciMv91h.s:356    .text.HAL_GPIO_DeInit:0000000000000000 $t
+     /tmp/cciMv91h.s:361    .text.HAL_GPIO_DeInit:0000000000000000 HAL_GPIO_DeInit
+     /tmp/cciMv91h.s:534    .text.HAL_GPIO_DeInit:0000000000000104 $d
+     /tmp/cciMv91h.s:541    .text.HAL_GPIO_ReadPin:0000000000000000 $t
+     /tmp/cciMv91h.s:546    .text.HAL_GPIO_ReadPin:0000000000000000 HAL_GPIO_ReadPin
+     /tmp/cciMv91h.s:573    .text.HAL_GPIO_WritePin:0000000000000000 $t
+     /tmp/cciMv91h.s:578    .text.HAL_GPIO_WritePin:0000000000000000 HAL_GPIO_WritePin
+     /tmp/cciMv91h.s:601    .text.HAL_GPIO_TogglePin:0000000000000000 $t
+     /tmp/cciMv91h.s:606    .text.HAL_GPIO_TogglePin:0000000000000000 HAL_GPIO_TogglePin
+     /tmp/cciMv91h.s:633    .text.HAL_GPIO_LockPin:0000000000000000 $t
+     /tmp/cciMv91h.s:638    .text.HAL_GPIO_LockPin:0000000000000000 HAL_GPIO_LockPin
+     /tmp/cciMv91h.s:691    .text.HAL_GPIO_EXTI_Callback:0000000000000000 $t
+     /tmp/cciMv91h.s:696    .text.HAL_GPIO_EXTI_Callback:0000000000000000 HAL_GPIO_EXTI_Callback
+     /tmp/cciMv91h.s:709    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000000 $t
+     /tmp/cciMv91h.s:714    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000000 HAL_GPIO_EXTI_IRQHandler
+     /tmp/cciMv91h.s:743    .text.HAL_GPIO_EXTI_IRQHandler:0000000000000014 $d
                      .debug_frame:0000000000000010 $d
-                           .group:0000000000000000 wm4.0.20963d46ba5d8e371b8630ece00f11ec
+                           .group:0000000000000000 wm4.0.ce9719c4d8052b398cb3d38040ad461e
                            .group:0000000000000000 wm4.stm32f4xx_hal_conf.h.24.d14dd899dbfa16d6dc9a7b8d5f0b81d2
                            .group:0000000000000000 wm4.stm32f4xx.h.55.8c995fbadbb7a126747b547eb8ec7b5b
                            .group:0000000000000000 wm4.stm32f446xx.h.51.16a9122ede9860ebbb552c9e423d1ecd
@@ -1385,7 +1385,7 @@ DEFINED SYMBOLS
                            .group:0000000000000000 wm4.stm32f4xx_hal_pwr_ex.h.22.cf49f655fb514fa1eda6a251fa1b2f1a
                            .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
                            .group:0000000000000000 wm4.stm32f4xx_hal_uart.h.22.2b47c8130d845b927904837c0b2264ce
-ARM GAS  /tmp/ccTPvOh4.s 			page 25
+ARM GAS  /tmp/cciMv91h.s 			page 25
 
 
                            .group:0000000000000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840

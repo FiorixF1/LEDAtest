@@ -55,6 +55,10 @@ Cosa ho fatto finora:
 Situazione attuale:
 - Le primitive funzionano
 - Al momento non genero numeri casuali
+- Creato qualche script bash per compilare velocemente
+- Al lavoro su script Python per testare i KAT in modo automatico
+
+
 
 
 
@@ -64,4 +68,19 @@ openocd -f tcl/board/st_nucleo_f4.cfg
 target remote :3333
 file ./build/LEDAtest.elf <- per avere simboli di debug
 monitor reset halt
+
+
+
+
+
+INVIARE DATI SULLA SERIALE
+    Usa lo script UART.py
+RICEVERE DATI SULLA SERIALE
+    Usa cat /dev/ttyACM0 > file
+    MA QUESTO SI FERMA COME UNO SCEMO
+    Prova questo
+awk `
+/EOF/ {exit;} 
+ {print;}` < /dev/ttyUSB0 > file.txt
+E alla fine lavori sul file
 
