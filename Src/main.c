@@ -74,6 +74,35 @@ void printBytes(unsigned char *data, int length) {
     }
 }
 
+// print array of bytes in a KAT-compliant way...
+void printBytesKAT(unsigned char *data, int length) {
+    char zeros[9] = "00000000";
+    char buffer[16];
+    int swap;
+    int i;
+    
+    for (i = 0; i < 4; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    swap = 0;
+    i = 8;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+
 /* USER CODE END 0 */
 
 /**
@@ -119,12 +148,27 @@ int main(void)
       HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFFFF);
   }
   
+  unsigned char entropy_string[97] = "061550234D158C5EC95595FE04EF7A25767F2E24CC2BC479D09D86DC9ABCFDE7056A8C266F9EF97ED08541DBD2E1FFA1";
   unsigned char entropy[48];
-  unsigned char custom[48] = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
-  for (unsigned char i = 0; i < 48; ++i) {
-      entropy[i] = i & 0xff;
+  unsigned char *tmp = entropy_string;
+  for (size_t count = 0; count < 48; count++) {
+    char high = entropy_string[count*2];
+    char low = entropy_string[count*2 + 1];
+    entropy[count] = 0;
+    
+    if (high >= '0' && high <= '9') {
+        entropy[count] = (high - '0') << 4;
+    } else if (high >= 'A' && high <= 'F') {
+        entropy[count] = (high - 'A' + 10) << 4;
+    }
+    
+    if (low >= '0' && low <= '9') {
+        entropy[count] |= low - '0';
+    } else if (low >= 'A' && low <= 'F') {
+        entropy[count] |= low - 'A' + 10;
+    }
   }
-  randombytes_init(entropy, custom, 1);
+  randombytes_init(entropy, NULL, 1);
   
   char *PAIR = "\n\rGenerating keys...";
   char *PK = "\n\rPublic key is: ";
@@ -133,6 +177,7 @@ int main(void)
   char *DEC = "\n\rDecrypting...";
   char *SHOW_CTX = "\n\rCiphertext Encrypt(e, pk) is: ";
   char *SHOW_SS = "\n\rShared secret Hash(e) - or Hash(c.k) - is: ";
+  char *SEED = "\n\rSeed is: ";
   char *ERR_PAIR = "\n\rError in keypair";
   char *ERR_ENC = "\n\rError in enc";
   char *ERR_DEC = "\n\rError in dec";
@@ -147,7 +192,7 @@ int main(void)
   ans = crypto_kem_keypair(pk, sk);
   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_PAIR, strlen(ERR_PAIR), 0xFFFFFF);
   HAL_UART_Transmit(&huart2, (uint8_t*)PK, strlen(PK), 0xFFFFFF);
-  printBytes(pk, CRYPTO_PUBLICKEYBYTES);
+  printBytesKAT(pk, CRYPTO_PUBLICKEYBYTES);
   HAL_UART_Transmit(&huart2, (uint8_t*)SK, strlen(SK), 0xFFFFFF);
   printBytes(sk, CRYPTO_SECRETKEYBYTES);
   
@@ -155,7 +200,7 @@ int main(void)
   ans = crypto_kem_enc(msg, ss, pk);
   if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_ENC, strlen(ERR_ENC), 0xFFFFFF);
   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_CTX, strlen(SHOW_CTX), 0xFFFFFF);
-  printBytes(msg, CRYPTO_CIPHERTEXTBYTES);
+  printBytesKAT(msg, CRYPTO_CIPHERTEXTBYTES);
   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFFFF);
   printBytes(ss, CRYPTO_BYTES);
   
@@ -165,6 +210,8 @@ int main(void)
   HAL_UART_Transmit(&huart2, (uint8_t*)SHOW_SS, strlen(SHOW_SS), 0xFFFFFF);
   printBytes(ss, CRYPTO_BYTES);
   
+  HAL_UART_Transmit(&huart2, (uint8_t*)SEED, strlen(SEED), 0xFFFFFF);
+  printBytes(entropy, 48);
   /* USER CODE END 2 */
 
   /* Infinite loop */
