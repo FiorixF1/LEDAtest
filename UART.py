@@ -3,7 +3,7 @@ import serial
 
 # configure the serial connections (the parameters differs on the device you are connecting to)
 ser = serial.Serial(
-    port='/dev/ttyACM1',
+    port='/dev/ttyACM0',
     baudrate=115200,
     parity=serial.PARITY_NONE,
     stopbits=serial.STOPBITS_ONE,
@@ -12,7 +12,7 @@ ser = serial.Serial(
 
 ser.isOpen()
 
-"""
+
 print('Enter your commands below.\r\nInsert "exit" to leave the application.')
 
 val = 1
@@ -36,8 +36,9 @@ while True:
             out += ser.read(1).decode('utf-8')
         if out != '':
             print(">>" + out)
-"""
 
+
+"""
 with open("./KAT/PQCkem-ephKAT_24_3.rsp", "r") as f:
     data = f.readlines()
     
@@ -49,3 +50,4 @@ for line in data:
         ser.write(payload)
         ser.flushInput()
         time.sleep(10)
+        """

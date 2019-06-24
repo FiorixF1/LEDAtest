@@ -71,17 +71,19 @@ void printBytes(unsigned char *data, int length) {
     char buffer[16];
     int i;
     for (i = 0; i < length; ++i) {
-        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i]), 0xFFFFFF);
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
     }
 }
 
-// print array of bytes in a KAT-compliant way...
-void printBytesKAT(unsigned char *data, int length) {
+// print array of bytes in a KAT-compliant way
+// more complicated than expected: leading zeros are placed differently in PK and CT based on values of CATEGORY and N0
+#if N0 == 2
+void printPk(unsigned char *data, int length) {
     char zeros[9] = "00000000";
     char buffer[16];
     
     for (int i = 0; i < 4; ++i) {
-        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i]), 0xFFFFFF);
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
     }
     HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
     
@@ -89,7 +91,7 @@ void printBytesKAT(unsigned char *data, int length) {
     int i = 8;
     while (i < length) {
         for (int j = 0; j < 4; ++j) {
-            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02x", data[i+j]), 0xFFFFFF);
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
         }
         
         if (swap) {
@@ -102,6 +104,201 @@ void printBytesKAT(unsigned char *data, int length) {
     }
 }
 
+void printCt(unsigned char *data, int length) {
+    printPk(data, length);
+}
+#elif (N0 == 3) && ((CATEGORY == 1) || (CATEGORY == 2) || (CATEGORY == 3))
+void printPk(unsigned char *data, int length) {
+    char zeros[9] = "00000000";
+    char buffer[16];
+    
+    for (int i = 0; i < 4; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    int swap = 0;
+    int i = 8;
+    while (i < length/2) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+    
+    for (int j = 0; j < 4; ++j) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i-4+j]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    swap = 0;
+    i += 4;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+
+void printCt(unsigned char *data, int length) {
+    char zeros[9] = "00000000";
+    char buffer[16];
+    
+    for (int i = 0; i < 4; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    int swap = 0;
+    int i = 8;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+#elif ((N0 == 3) && ((CATEGORY == 4) || (CATEGORY == 5))) || ((N0 == 4) && ((CATEGORY == 1) || (CATEGORY == 4) || (CATEGORY == 5)))
+void printPk(unsigned char *data, int length) {
+    int swap = 0;
+    int i = 4;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+
+void printCt(unsigned char *data, int length) {
+    printPk(data, length);
+}
+#elif (N0 == 4) && ((CATEGORY == 2) || (CATEGORY == 3))
+void printPk(unsigned char *data, int length) {
+    char zeros[9] = "00000000";
+    char buffer[16];
+    
+    for (int i = 0; i < 4; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    int swap = 0;
+    int i = 8;
+    while (i <= length/3) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+    
+    for (int j = 0; j < 4; ++j) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i-4+j]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    swap = 0;
+    i += 4;
+    while (i < 2*length/3) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+    
+    for (int j = 0; j < 4; ++j) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i-4+j]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    swap = 0;
+    i += 4;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+
+void printCt(unsigned char *data, int length) {
+    char zeros[9] = "00000000";
+    char buffer[16];
+    
+    for (int i = 0; i < 4; ++i) {
+        HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i]), 0xFFFFFF);
+    }
+    HAL_UART_Transmit(&huart2, zeros, 8, 0xFFFFFF);
+    
+    int swap = 0;
+    int i = 8;
+    while (i < length) {
+        for (int j = 0; j < 4; ++j) {
+            HAL_UART_Transmit(&huart2, (uint8_t*)buffer, sprintf(buffer, "%02X", data[i+j]), 0xFFFFFF);
+        }
+        
+        if (swap) {
+            i += 12;
+            swap = 0;
+        } else {
+            i -= 4;
+            swap = 1;
+        }
+    }
+}
+#else
+#error Unsupported values for CATEGORY and N0
+#endif
 /* USER CODE END 0 */
 
 /**
@@ -170,7 +367,7 @@ int main(void)
   char *CT = "\n\rct = ";
   char *SS = "\n\rss = ";
   char *ERR_DEC = "\n\rError in dec";
-  int count;
+  int count = 0;
   int ans;
   
   unsigned char msg[CRYPTO_CIPHERTEXTBYTES];
@@ -198,25 +395,25 @@ int main(void)
     
     unsigned char entropy[48];
     unsigned char *tmp = entropy_string;
-    for (size_t count = 0; count < 48; count++) {
-      char high = entropy_string[count*2];
-      char low = entropy_string[count*2 + 1];
-      entropy[count] = 0;
+    for (size_t i = 0; i < 48; i++) {
+      char high = entropy_string[i*2];
+      char low = entropy_string[i*2 + 1];
+      entropy[i] = 0;
     
       if (high >= '0' && high <= '9') {
-          entropy[count] = (high - '0') << 4;
+          entropy[i] = (high - '0') << 4;
       } else if (high >= 'A' && high <= 'F') {
-          entropy[count] = (high - 'A' + 10) << 4;
+          entropy[i] = (high - 'A' + 10) << 4;
       } else if (high >= 'a' && high <= 'f') {
-          entropy[count] = (high - 'a' + 10) << 4;
+          entropy[i] = (high - 'a' + 10) << 4;
       }
     
       if (low >= '0' && low <= '9') {
-          entropy[count] |= low - '0';
+          entropy[i] |= low - '0';
       } else if (low >= 'A' && low <= 'F') {
-          entropy[count] |= low - 'A' + 10;
+          entropy[i] |= low - 'A' + 10;
       } else if (low >= 'a' && low <= 'f') {
-          entropy[count] |= low - 'a' + 10;
+          entropy[i] |= low - 'a' + 10;
       }
     }
     randombytes_init(entropy, NULL, 1);
@@ -224,23 +421,20 @@ int main(void)
     printBytes(entropy, 48);
     
     // pk and sk
-    //HAL_UART_Transmit(&huart2, (uint8_t*)PAIR, strlen(PAIR), 0xFFFFFF);
     ans = crypto_kem_keypair(pk, sk);
     HAL_UART_Transmit(&huart2, (uint8_t*)PK, strlen(PK), 0xFFFFFF);
-    printBytesKAT(pk, CRYPTO_PUBLICKEYBYTES);
+    printPk(pk, CRYPTO_PUBLICKEYBYTES);
     HAL_UART_Transmit(&huart2, (uint8_t*)SK, strlen(SK), 0xFFFFFF);
     printBytes(sk, CRYPTO_SECRETKEYBYTES);
     
     // ct and ss
-    //HAL_UART_Transmit(&huart2, (uint8_t*)ENC, strlen(ENC), 0xFFFFFF);
     ans = crypto_kem_enc(msg, ss, pk);
     HAL_UART_Transmit(&huart2, (uint8_t*)CT, strlen(CT), 0xFFFFFF);
-    printBytesKAT(msg, CRYPTO_CIPHERTEXTBYTES);
+    printCt(msg, CRYPTO_CIPHERTEXTBYTES);
     HAL_UART_Transmit(&huart2, (uint8_t*)SS, strlen(SS), 0xFFFFFF);
     printBytes(ss, CRYPTO_BYTES);
     
     // decryption testing
-    //HAL_UART_Transmit(&huart2, (uint8_t*)DEC, strlen(DEC), 0xFFFFFF);
     ans = crypto_kem_dec(ss, msg, sk);
     if (ans != 0) HAL_UART_Transmit(&huart2, (uint8_t*)ERR_DEC, strlen(ERR_DEC), 0xFFFFFF);
     //HAL_UART_Transmit(&huart2, (uint8_t*)SS, strlen(SS), 0xFFFFFF);

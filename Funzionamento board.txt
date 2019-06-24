@@ -51,6 +51,7 @@ Cosa ho fatto finora:
         OBJDIR = bin
 4) Modificato il make di CubeMX per inserirci le librerie varie, cambiato la FPU da hard a soft, inserito i parametri di LEDAcrypt, guardalo insomma
 5) Fatto un main per testare
+6) Scritto uno script bash + Python per compilare velocemente in x86-32 e testare i KAT: al momento le funzioni che stmapano l'output sono KAT-compliant ad eccezione dello shared secret...
 
 Situazione attuale:
 - Le primitive funzionano
@@ -84,3 +85,9 @@ awk `
  {print;}` < /dev/ttyUSB0 > file.txt
 E alla fine lavori sul file
 
+
+
+
+TODO:
+ - Error vector che razza di pattern segue?
+ - ADC al posto di RNG?
