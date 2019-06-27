@@ -39,7 +39,7 @@
 
 #if CPU_WORD_BITS == 32
 
-#if ((N0 == 3) && (CATEGORY == 4 || CATEGORY == 5)) || ((N0 == 4) && (CATEGORY == 1 || CATEGORY == 4 || CATEGORY == 5))
+#if DIFF == 0
 void convert_error_vector_32_to_64(unsigned char *error_vector) {
     uint32_t high, low, *ptr = error_vector;
     
@@ -56,14 +56,43 @@ void convert_error_vector_64_to_32(unsigned char *error_vector) {
 }
 #else
 void convert_error_vector_32_to_64(unsigned char *error_vector) {
-    ;
+    memset(error_vector + N0*(NUM_DIGITS_GF2X_ELEMENT)*DIGIT_SIZE_B, 0, N0*DIFF*DIGIT_SIZE_B);
+    
+    uint32_t *ptr = error_vector;
+    
+    int i = (N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B - 16) >> 2;
+    while (i >= ((NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B) >> 2) {
+        ptr[i+3] = ptr[i];
+        ptr[i+2] = ptr[i+1];
+        i -= 2;
+    }
+    
+    while (i >= 0) {
+        ptr[i+3] = ptr[i+1];
+        ptr[i+1] = 0;
+        i -= 2;
+    }
 }
 void convert_error_vector_64_to_32(unsigned char *error_vector) {
-    ;
+    uint32_t *ptr = error_vector;
+    
+    int i = 0;
+    while (i < ((NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B) >> 2) {
+        ptr[i+1] = ptr[i+3];
+        i += 2;
+    }
+    
+    while (i < (N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B - 8) >> 2) {
+        ptr[i] = ptr[i+3];
+        ptr[i+1] = ptr[i+2];
+        i += 2;
+    }
+    
+    ptr[i] = ptr[i+1] = 0;
 }
 #endif
 
-#endif // CPU_WORD_BITS
+#endif  // CPU_WORD_BITS
 
 /* Generates a keypair - pk is the public key and sk is the secret key. */
 int crypto_kem_keypair( unsigned char *pk,
@@ -93,7 +122,7 @@ int crypto_kem_enc( unsigned char *ct,
    randombytes(encapsulated_key_seed,TRNG_BYTE_LENGTH);
    seedexpander_from_trng(&niederreiter_encap_key_expander,encapsulated_key_seed);
 
-   DIGIT error_vector[N0*NUM_DIGITS_GF2X_ELEMENT];
+   DIGIT error_vector[N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)];
    rand_circulant_blocks_sequence(error_vector,
                                   NUM_ERRORS_T,
                                   &niederreiter_encap_key_expander);
@@ -102,7 +131,7 @@ int crypto_kem_enc( unsigned char *ct,
    convert_error_vector_32_to_64(error_vector);
    #endif
    HASH_FUNCTION((const unsigned char *) error_vector,    // input
-                 (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B), // input Length
+                 (N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B), // input Length
                  ss);
    #if CPU_WORD_BITS == 32
    convert_error_vector_64_to_32(error_vector);
@@ -120,7 +149,7 @@ int crypto_kem_dec( unsigned char *ss,
                     const unsigned char *ct,
                     const unsigned char *sk )
 {
-   DIGIT decoded_error_vector[N0*NUM_DIGITS_GF2X_ELEMENT];
+   DIGIT decoded_error_vector[N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)];
 
    int decode_ok = decrypt_niederreiter(decoded_error_vector,
                                         (privateKeyNiederreiter_t *)sk,
@@ -131,7 +160,7 @@ int crypto_kem_dec( unsigned char *ss,
    #endif
    
    HASH_FUNCTION((const unsigned char *) decoded_error_vector,
-                    (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B),
+                    (N0*(NUM_DIGITS_GF2X_ELEMENT+DIFF)*DIGIT_SIZE_B),
                     ss);
    if (decode_ok == 1) {
       return 0;
