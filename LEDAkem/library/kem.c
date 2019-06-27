@@ -36,6 +36,35 @@
 #include "rng.h"
 #include "sha3.h"
 #include <string.h>
+
+#if CPU_WORD_BITS == 32
+
+#if ((N0 == 3) && (CATEGORY == 4 || CATEGORY == 5)) || ((N0 == 4) && (CATEGORY == 1 || CATEGORY == 4 || CATEGORY == 5))
+void convert_error_vector_32_to_64(unsigned char *error_vector) {
+    uint32_t high, low, *ptr = error_vector;
+    
+    for (int i = 0; i < (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B) >> 2; i += 2) {
+        high = ptr[i];
+        low = ptr[i+1];
+        
+        ptr[i] = low;
+        ptr[i+1] = high;
+    }
+}
+void convert_error_vector_64_to_32(unsigned char *error_vector) {
+    convert_error_vector_32_to_64(error_vector);
+}
+#else
+void convert_error_vector_32_to_64(unsigned char *error_vector) {
+    ;
+}
+void convert_error_vector_64_to_32(unsigned char *error_vector) {
+    ;
+}
+#endif
+
+#endif // CPU_WORD_BITS
+
 /* Generates a keypair - pk is the public key and sk is the secret key. */
 int crypto_kem_keypair( unsigned char *pk,
                         unsigned char *sk )
@@ -69,10 +98,16 @@ int crypto_kem_enc( unsigned char *ct,
                                   NUM_ERRORS_T,
                                   &niederreiter_encap_key_expander);
 
+   #if CPU_WORD_BITS == 32
+   convert_error_vector_32_to_64(error_vector);
+   #endif
    HASH_FUNCTION((const unsigned char *) error_vector,    // input
                  (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B), // input Length
                  ss);
-
+   #if CPU_WORD_BITS == 32
+   convert_error_vector_64_to_32(error_vector);
+   #endif
+   
    encrypt_niederreiter((DIGIT *) ct,(publicKeyNiederreiter_t *) pk, error_vector);
    return 0;
 }
@@ -90,6 +125,11 @@ int crypto_kem_dec( unsigned char *ss,
    int decode_ok = decrypt_niederreiter(decoded_error_vector,
                                         (privateKeyNiederreiter_t *)sk,
                                         (DIGIT *)ct);
+   
+   #if CPU_WORD_BITS == 32
+   convert_error_vector_32_to_64(decoded_error_vector);
+   #endif
+   
    HASH_FUNCTION((const unsigned char *) decoded_error_vector,
                     (N0*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B),
                     ss);
