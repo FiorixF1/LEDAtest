@@ -50,14 +50,21 @@ Cosa ho fatto finora:
         SRCDIR = library
         OBJDIR = bin
 4) Modificato il make di CubeMX per inserirci le librerie varie, cambiato la FPU da hard a soft, inserito i parametri di LEDAcrypt, guardalo insomma
-5) Fatto un main per testare
-6) Scritto uno script bash + Python per compilare velocemente in x86-32 e testare i KAT: al momento le funzioni che stmapano l'output sono KAT-compliant ad eccezione dello shared secret...
+5) Fatto un main per testare con output KAT-compliant
+6) Scritto uno script bash + Python per compilare velocemente in x86 e testare i KAT
+7) Nella libreria modificati i file
+    - gf2x_xPplusOne.h: definizioni di due costanti nuove
+    - api.h: prototipi di due nuove funzioni e modificate le lunghezze degli array
+    - kem.c: implementate quelle due funzioni, necessarie per generare uno shared secret su ARM uguale a quello previsto su x64
+
+
 
 Situazione attuale:
 - Le primitive funzionano
 - Al momento non genero numeri casuali
 - Creato qualche script bash per compilare velocemente
-- Al lavoro su script Python per testare i KAT in modo automatico
+- Creato script Python per testare i KAT e, grazie alle funzioni di serializzazione, PASSANO TUTTI
+    Tuttavia e' testato su x86, dovrei cercare di farlo sul controllore gestendo la seriale che un po' e' rognosa
 
 
 
@@ -89,5 +96,5 @@ E alla fine lavori sul file
 
 
 TODO:
- - Error vector che razza di pattern segue?
  - ADC al posto di RNG?
+ - Numeri casuali sull'altra board ;)

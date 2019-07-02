@@ -42,8 +42,9 @@
 
 #define                NUM_BITS_GF2X_ELEMENT (P)
 #define              NUM_DIGITS_GF2X_ELEMENT ((P+DIGIT_SIZE_b-1)/DIGIT_SIZE_b)
+#define    NUM_DIGITS_GF2X_ELEMENT_REFERENCE (((P+64-1)/64)*(64/DIGIT_SIZE_b))
 #define MSb_POSITION_IN_MSB_DIGIT_OF_ELEMENT ( (P % DIGIT_SIZE_b) ? (P % DIGIT_SIZE_b)-1 : DIGIT_SIZE_b-1 )
-#define                                 DIFF ((((P+64-1)/64)*(64/DIGIT_SIZE_b)) - NUM_DIGITS_GF2X_ELEMENT)
+#define                       PADDING_LENGTH (NUM_DIGITS_GF2X_ELEMENT_REFERENCE - NUM_DIGITS_GF2X_ELEMENT)
 
 #define                NUM_BITS_GF2X_MODULUS (P+1)
 #define              NUM_DIGITS_GF2X_MODULUS ((P+1+DIGIT_SIZE_b-1)/DIGIT_SIZE_b)
