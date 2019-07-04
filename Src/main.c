@@ -423,14 +423,14 @@ int main(void)
     // pk and sk
     ans = crypto_kem_keypair(pk, sk);
     HAL_UART_Transmit(&huart2, (uint8_t*)PK, strlen(PK), 0xFFFFFF);
-    printPk(pk, CRYPTO_PUBLICKEYBYTES);
+    printBytes(pk, CRYPTO_PUBLICKEYBYTES);
     HAL_UART_Transmit(&huart2, (uint8_t*)SK, strlen(SK), 0xFFFFFF);
     printBytes(sk, CRYPTO_SECRETKEYBYTES);
     
     // ct and ss
     ans = crypto_kem_enc(msg, ss, pk);
     HAL_UART_Transmit(&huart2, (uint8_t*)CT, strlen(CT), 0xFFFFFF);
-    printCt(msg, CRYPTO_CIPHERTEXTBYTES);
+    printBytes(msg, CRYPTO_CIPHERTEXTBYTES);
     HAL_UART_Transmit(&huart2, (uint8_t*)SS, strlen(SS), 0xFFFFFF);
     printBytes(ss, CRYPTO_BYTES);
     

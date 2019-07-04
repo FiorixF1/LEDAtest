@@ -62,10 +62,11 @@ Cosa ho fatto finora:
 Situazione attuale:
 - Le primitive funzionano
 - Al momento non genero numeri casuali
+- Non c'e' clock_gettime() in rng.c
 - Creato qualche script bash per compilare velocemente
 - Creato script Python per testare i KAT e, grazie alle funzioni di serializzazione, PASSANO TUTTI
     Tuttavia e' testato su x86, dovrei cercare di farlo sul controllore gestendo la seriale che un po' e' rognosa
-
+- Nuovo main che gestisce anche i numeri casuali come seed, pero' sull'altra board
 
 
 
