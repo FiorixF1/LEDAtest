@@ -77,6 +77,8 @@ void printBytes(unsigned char *data, int length) {
 
 // print array of bytes in a KAT-compliant way
 // more complicated than expected: leading zeros are placed differently in PK and CT based on values of CATEGORY and N0
+// NOT USED ANYMORE, SERIALIZATION IS INSIDE kem.c - this code is here for future reference
+/*
 #if N0 == 2
 void printPk(unsigned char *data, int length) {
     char zeros[9] = "00000000";
@@ -299,6 +301,7 @@ void printCt(unsigned char *data, int length) {
 #else
 #error Unsupported values for CATEGORY and N0
 #endif
+*/
 /* USER CODE END 0 */
 
 /**
@@ -335,29 +338,6 @@ int main(void)
   
   char *test = "\n\r# LEDA";
   HAL_UART_Transmit(&huart2, (uint8_t*)test, strlen(test), 0xFFFFFF);
-  
-  /*
-  srand(0);
-  for (int i = 0; i < 10; ++i) {
-      char number[10];
-      itoa(rand() % 1000, number, 10);
-      number[strlen(number)+1] = 0;
-      number[strlen(number)] = '\n';
-      HAL_UART_Transmit(&huart2, (uint8_t*)number, strlen(number), 0xFFFFFF);
-  }
-  
-  char *PAIR = "\n\rGenerating keys...";
-  char *PK = "\n\rPublic key is: ";
-  char *SK = "\n\rPrivate key is: ";
-  char *ENC = "\n\rEncrypting...";
-  char *DEC = "\n\rDecrypting...";
-  char *CT = "\n\rCiphertext Encrypt(e, pk) is: ";
-  char *SS = "\n\rShared secret Hash(e) - or Hash(c.k) - is: ";
-  char *SEED = "\n\rSeed is: ";
-  char *ERR_PAIR = "\n\rError in keypair";
-  char *ERR_ENC = "\n\rError in enc";
-  char *ERR_DEC = "\n\rError in dec";
-  */
   
   char *NEWLINE = "\n\r";
   char *COUNT = "\n\rcount = ";
@@ -422,15 +402,23 @@ int main(void)
     
     // pk and sk
     ans = crypto_kem_keypair(pk, sk);
+    
     HAL_UART_Transmit(&huart2, (uint8_t*)PK, strlen(PK), 0xFFFFFF);
+    convert_array_32_to_64(pk, CRYPTO_PUBLICKEYBYTES);
     printBytes(pk, CRYPTO_PUBLICKEYBYTES);
+    convert_array_64_to_32(pk, CRYPTO_PUBLICKEYBYTES);
+    
     HAL_UART_Transmit(&huart2, (uint8_t*)SK, strlen(SK), 0xFFFFFF);
     printBytes(sk, CRYPTO_SECRETKEYBYTES);
     
     // ct and ss
     ans = crypto_kem_enc(msg, ss, pk);
+    
     HAL_UART_Transmit(&huart2, (uint8_t*)CT, strlen(CT), 0xFFFFFF);
+    convert_array_32_to_64(msg, CRYPTO_CIPHERTEXTBYTES);
     printBytes(msg, CRYPTO_CIPHERTEXTBYTES);
+    convert_array_64_to_32(msg, CRYPTO_CIPHERTEXTBYTES);
+    
     HAL_UART_Transmit(&huart2, (uint8_t*)SS, strlen(SS), 0xFFFFFF);
     printBytes(ss, CRYPTO_BYTES);
     

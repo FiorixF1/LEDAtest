@@ -98,7 +98,7 @@ void convert_array_64_to_32(unsigned char *error_vector, size_t length) {
     }
 }
 #else
-#error Everything is messed up
+#error There is something wrong with PADDING_LENGTH
 #endif
 
 #endif  // CPU_WORD_BITS

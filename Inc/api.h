@@ -45,31 +45,37 @@
 #define  CRYPTO_SECRETKEYBYTES TRNG_BYTE_LENGTH
 
 /* size in bytes of the public key */
-#define  CRYPTO_PUBLICKEYBYTES ((N0-1)*NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B)
+#define  CRYPTO_PUBLICKEYBYTES ((N0-1)*NUM_DIGITS_GF2X_ELEMENT_REFERENCE*DIGIT_SIZE_B)
 
 /* size in bytes of the shared secret */
 #define  CRYPTO_BYTES HASH_BYTE_LENGTH
 
 /*size in bytes of the ciphertext*/
-#define  CRYPTO_CIPHERTEXTBYTES (NUM_DIGITS_GF2X_ELEMENT*DIGIT_SIZE_B)
+#define  CRYPTO_CIPHERTEXTBYTES (NUM_DIGITS_GF2X_ELEMENT_REFERENCE*DIGIT_SIZE_B)
 
 /* Your functions must return 0 to indicate success, -1 to indicate an error
  * condition */
+
+#if CPU_WORD_BITS == 32
+/* Utility functions to serialize in-place an array from 32-bit little-endian
+ * byte order to 64-bit little-endian byte order and viceversa, length needs
+ * to be a multiple of NUM_DIGITS_GF2X_ELEMENT_REFERENCE*DIGIT_SIZE_B. */
+void convert_array_32_to_64(unsigned char *error_vector, size_t length);
+void convert_array_64_to_32(unsigned char *error_vector, size_t length);
+#endif
 
 /* Generates a keypair - pk is the public key and sk is the secret key. */
 int crypto_kem_keypair( unsigned char *pk,
                         unsigned char *sk );
 
 /* Encrypt - pk is the public key, ct is a key encapsulation message
-  (ciphertext), ss is the shared secret.*/
+  (ciphertext), ss is the shared secret. */
 int crypto_kem_enc( unsigned char *ct,
                     unsigned char *ss,
                     const unsigned char *pk );
 
-
 /* Decrypt - ct is a key encapsulation message (ciphertext), sk is the private
-   key, ss is the shared secret */
-
+   key, ss is the shared secret. */
 int crypto_kem_dec( unsigned char *ss,
                     const unsigned char *ct,
                     const unsigned char *sk );

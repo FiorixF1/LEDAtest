@@ -1,5 +1,7 @@
 LUNGHEZZE
 
+Su x64 (implementazione di riferimento)
+
     |           N02                 |           N03                 |           N04
     |   SL1     SL2-3       SL4-5   |   SL1     SL2-3       SL4-5   |   SL1     SL2-3       SL4-5       
     + - - - - - - - - - - - - - - - + - - - - - - - - - - - - - - - + - - - - - - - - - - - - - - -
@@ -14,7 +16,7 @@ NUM_DIGITS_GF2X_ELEMENT = ((P+DIGIT_SIZE_b-1)/DIGIT_SIZE_b)
 
 
 
-Su x86
+Su x86 / ARM
 
     |           N02                 |           N03                 |           N04
     |   SL1     SL2-3       SL4-5   |   SL1     SL2-3       SL4-5   |   SL1     SL2-3       SL4-5       
@@ -28,24 +30,3 @@ err |   3736    6424        9224    |   3108    6036        10296   |   3776    
 P   |   14939   25693       36877   |   8269    16067       27437   |   7547    14341       22691
 NUM_DIGITS_GF2X_ELEMENT = ((P+DIGIT_SIZE_b-1)/DIGIT_SIZE_b)
     |   467     803         1153    |   259     503         858     |   236     449         710
-    
-
-
-
-
-
-Error pattern
-Pattern A = ultimi 8 byte anticipati di 8 byte, poi a na certa fa swap e anticipa di 8 byte...
-Pattern B = swap
-
-SL1 N02    A
-SL1 N03    A
-SL1 N04    B
-
-SL2 N02    A
-SL2 N03    A
-SL2 N04    A
-
-SL4 N02    A
-SL4 N03    B
-SL4 N04    B

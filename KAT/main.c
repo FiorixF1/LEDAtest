@@ -11,231 +11,6 @@ void printBytes(unsigned char *data, int length) {
     }
 }
 
-// print array of bytes in a KAT-compliant way
-// more complicated than expected: leading zeros are placed differently in PK and CT based on values of CATEGORY and N0
-#if N0 == 2
-void printPk(unsigned char *data, int length) {
-    char zeros[9] = "00000000";
-    char buffer[16];
-    
-    for (int i = 0; i < 4; ++i) {
-        printf("%02X", data[i]);
-    }
-    printf("%s", zeros);
-    
-    int swap = 0;
-    int i = 8;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-
-void printCt(unsigned char *data, int length) {
-    printPk(data, length);
-}
-#elif (N0 == 3) && ((CATEGORY == 1) || (CATEGORY == 2) || (CATEGORY == 3))
-void printPk(unsigned char *data, int length) {
-    char zeros[9] = "00000000";
-    char buffer[16];
-    
-    for (int i = 0; i < 4; ++i) {
-        printf("%02X", data[i]);
-    }
-    printf("%s", zeros);
-    
-    int swap = 0;
-    int i = 8;
-    while (i < length/2) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-    
-    for (int j = 0; j < 4; ++j) {
-        printf("%02X", data[i-4+j]);
-    }
-    printf("%s", zeros);
-    
-    swap = 0;
-    i += 4;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-
-void printCt(unsigned char *data, int length) {
-    char zeros[9] = "00000000";
-    char buffer[16];
-    
-    for (int i = 0; i < 4; ++i) {
-        printf("%02X", data[i]);
-    }
-    printf("%s", zeros);
-    
-    int swap = 0;
-    int i = 8;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-#elif ((N0 == 3) && ((CATEGORY == 4) || (CATEGORY == 5))) || ((N0 == 4) && ((CATEGORY == 1) || (CATEGORY == 4) || (CATEGORY == 5)))
-void printPk(unsigned char *data, int length) {
-    int swap = 0;
-    int i = 4;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-
-void printCt(unsigned char *data, int length) {
-    printPk(data, length);
-}
-#elif (N0 == 4) && ((CATEGORY == 2) || (CATEGORY == 3))
-void printPk(unsigned char *data, int length) {
-    char zeros[9] = "00000000";
-    char buffer[16];
-    
-    for (int i = 0; i < 4; ++i) {
-        printf("%02X", data[i]);
-    }
-    printf("%s", zeros);
-    
-    int swap = 0;
-    int i = 8;
-    while (i <= length/3) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-    
-    for (int j = 0; j < 4; ++j) {
-        printf("%02X", data[i-4+j]);
-    }
-    printf("%s", zeros);
-    
-    swap = 0;
-    i += 4;
-    while (i < 2*length/3) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-    
-    for (int j = 0; j < 4; ++j) {
-        printf("%02X", data[i-4+j]);
-    }
-    printf("%s", zeros);
-    
-    swap = 0;
-    i += 4;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-
-void printCt(unsigned char *data, int length) {
-    char zeros[9] = "00000000";
-    char buffer[16];
-    
-    for (int i = 0; i < 4; ++i) {
-        printf("%02X", data[i]);
-    }
-    printf("%s", zeros);
-    
-    int swap = 0;
-    int i = 8;
-    while (i < length) {
-        for (int j = 0; j < 4; ++j) {
-            printf("%02X", data[i+j]);
-        }
-        
-        if (swap) {
-            i += 12;
-            swap = 0;
-        } else {
-            i -= 4;
-            swap = 1;
-        }
-    }
-}
-#else
-#error Unsupported values for CATEGORY and N0
-#endif
-
 int main(int argc, char **argv) {  
   char *SEED = "\nseed = ";
   char *PK = "\npk = ";
@@ -283,15 +58,23 @@ int main(int argc, char **argv) {
    
   // pk and sk
   ans = crypto_kem_keypair(pk, sk);
+  
   printf("%s", PK);
-  printPk(pk, CRYPTO_PUBLICKEYBYTES);
+  convert_array_32_to_64(pk, CRYPTO_PUBLICKEYBYTES);
+  printBytes(pk, CRYPTO_PUBLICKEYBYTES);
+  convert_array_64_to_32(pk, CRYPTO_PUBLICKEYBYTES);
+  
   printf("%s", SK);
   printBytes(sk, CRYPTO_SECRETKEYBYTES);
   
   // ct and ss
   ans = crypto_kem_enc(msg, ss, pk);
+  
   printf("%s", CT);
-  printCt(msg, CRYPTO_CIPHERTEXTBYTES);
+  convert_array_32_to_64(msg, CRYPTO_CIPHERTEXTBYTES);
+  printBytes(msg, CRYPTO_CIPHERTEXTBYTES);
+  convert_array_64_to_32(msg, CRYPTO_CIPHERTEXTBYTES);
+  
   printf("%s", SS);
   printBytes(ss, CRYPTO_BYTES);
     

@@ -1,7 +1,7 @@
 #pragma once
 
 #define LITTLE_ENDIAN
-#include <libkeccak.a.headers/KeccakHash.h>
+#include "libkeccak.a.headers/KeccakHash.h"
 
 static inline
 void sha3_256(const unsigned char *input,
