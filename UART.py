@@ -13,6 +13,7 @@ ser = serial.Serial(
 ser.isOpen()
 
 
+
 print('Enter your commands below.\r\nInsert "exit" to leave the application.')
 
 val = 1
@@ -30,12 +31,15 @@ while True:
             ser.flushInput()
 
         out = ''
-        # let's wait one second before reading output (let's give device time to answer)
-        time.sleep(5)
+        # let's wait before reading output (let's give device time to answer)
+        starting_time = time.time()
+        while ser.inWaiting() == 0 and time.time() - starting_time < 10:
+            pass
         while ser.inWaiting() > 0:
             out += ser.read(1).decode('utf-8')
+            time.sleep(0.01)
         if out != '':
-            print(">>" + out)
+            print(">> " + out)
 
 
 """

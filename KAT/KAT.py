@@ -1,8 +1,10 @@
 import sys
 from subprocess import Popen, PIPE
 
-SL = sys.argv[1]
-N0 = sys.argv[2]
+ARCH = sys.argv[1]
+SL = sys.argv[2]
+N0 = sys.argv[3]
+assert ARCH in ["32", "64"], "ARCH must be 32 or 64"
 assert SL in ["1", "2", "4"], "SL must be 1, 2 or 4"
 assert N0 in ["2", "3", "4"], "N0 must be 2, 3 or 4"
 key = (SL, N0)
@@ -26,20 +28,20 @@ count = 0
 for row in data:
     words = row.split()
     if len(words) != 0 and words[0] == 'seed':
-        process = Popen(["./32_SL{}_N0{}".format(SL, N0), words[-1]], stdout=PIPE)
+        process = Popen(["./{}_SL{}_N0{}".format(ARCH, SL, N0), words[-1]], stdout=PIPE)
         (response, err) = process.communicate()
         exit_code = process.wait()
         output += "\ncount = {}".format(count)
         output += response.decode("utf-8") + "\n"
         count += 1
 
-with open("./KAT/KAT32_SL{}_N0{}.txt".format(SL, N0), "w") as f:
+with open("./KAT/KAT{}_SL{}_N0{}.txt".format(ARCH, SL, N0), "w") as f:
     f.write(output)
 
     
 with open("./KAT/" + files[key], "r") as f:
     expected = f.readlines()
-with open("./KAT/KAT32_SL{}_N0{}.txt".format(SL, N0), "r") as f:
+with open("./KAT/KAT{}_SL{}_N0{}.txt".format(ARCH, SL, N0), "r") as f:
     real = f.readlines()
     
 for i in range(len(real)):
