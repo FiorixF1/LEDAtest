@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc9SqXSo.s 			page 1
+ARM GAS  /tmp/ccebJYKD.s 			page 1
 
 
    1              		.syntax unified
@@ -23,46 +23,46 @@ ARM GAS  /tmp/cc9SqXSo.s 			page 1
   20              		.file 1 "/usr/include/newlib/machine/_default_types.h"
   21              		.file 2 "/usr/include/newlib/sys/_stdint.h"
   22              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
-ARM GAS  /tmp/cc9SqXSo.s 			page 2
+ARM GAS  /tmp/ccebJYKD.s 			page 2
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 stm32f4xx_hal_tim_ex.c
-                           .group:0000000000000000 wm4.0.ce9719c4d8052b398cb3d38040ad461e
-                           .group:0000000000000000 wm4.stm32f4xx_hal_conf.h.24.d14dd899dbfa16d6dc9a7b8d5f0b81d2
-                           .group:0000000000000000 wm4.stm32f4xx.h.55.8c995fbadbb7a126747b547eb8ec7b5b
-                           .group:0000000000000000 wm4.stm32f446xx.h.51.16a9122ede9860ebbb552c9e423d1ecd
-                           .group:0000000000000000 wm4.features.h.22.2e382148a0560adabf236cddd4e880f4
-                           .group:0000000000000000 wm4._default_types.h.15.933e8edd27a65e0b69af4a865eb623d2
-                           .group:0000000000000000 wm4._intsup.h.10.35a45952db64d30146faa63a55c20c1c
-                           .group:0000000000000000 wm4._stdint.h.10.f76354baea1c7088202064e6f3d4f5e3
-                           .group:0000000000000000 wm4.stdint.h.23.373a9d32a9e4c2e88fd347156532d281
-                           .group:0000000000000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
-                           .group:0000000000000000 wm4.core_cm4.h.66.e4ff136c4a17abc46741866f64f8e729
-                           .group:0000000000000000 wm4.cmsis_gcc.h.26.f42444deefab66ffa141b9b9fddb57a3
-                           .group:0000000000000000 wm4.core_cm4.h.174.059a5e001a9e729091d1407208e93224
-                           .group:0000000000000000 wm4.mpu_armv7.h.32.27b4593cb2f8d3152ca5d97a9d72b321
-                           .group:0000000000000000 wm4.stm32f446xx.h.934.bc7ea77f64b5be5f795628ebc7fc6b73
-                           .group:0000000000000000 wm4.stm32f4xx.h.212.729f0f890654645a3f47ccc0cc2b00e7
-                           .group:0000000000000000 wm4.stm32_hal_legacy.h.23.ef4988de22c7a2f0806a94b08b5606e0
-                           .group:0000000000000000 wm4.stddef.h.39.c744ceb84abf2f8351653f0e2622da1c
-                           .group:0000000000000000 wm4.stm32f4xx_hal_def.h.58.2d2c85d5b9693a63e90566b806e8a752
-                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc_ex.h.22.ed8712e28628f6d35bd6f8847ee2f18f
-                           .group:0000000000000000 wm4.stm32f4xx_hal_rcc.h.108.0c18a3cfc2dd91bdf92470b4bd0ea1b5
-                           .group:0000000000000000 wm4.stm32f4xx_hal_exti.h.22.66e33df8a935c9f8e1682d5515a6c09a
-                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.22.be2c6bcf9722096ea8f49a41bf6aa50c
-                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio_ex.h.22.6858f59ca8a52c645189c74569e4d5b8
-                           .group:0000000000000000 wm4.stm32f4xx_hal_gpio.h.264.528537eb92c2ec5c1cd9dfb4d255d1da
-                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.22.fffce20ac9119c50557659c75e75ab1c
-                           .group:0000000000000000 wm4.stm32f4xx_hal_dma.h.721.a1e57ffbc615f926e6509c5acc65e492
-                           .group:0000000000000000 wm4.stm32f4xx_hal_cortex.h.22.e6aa3b847b5388be63c32d1f9e696ef7
-                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.22.31b301be2655c3eb8583e51c8231544a
-                           .group:0000000000000000 wm4.stm32f4xx_hal_flash_ex.h.22.df74a74dd40656a7fcd7d90cedd190b4
-                           .group:0000000000000000 wm4.stm32f4xx_hal_flash.h.363.51efdf0f6c88f683efb89d7cc95cc1be
-                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.22.2c27d93ae187efe3a73816f03a329970
-                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr_ex.h.22.cf49f655fb514fa1eda6a251fa1b2f1a
-                           .group:0000000000000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
-                           .group:0000000000000000 wm4.stm32f4xx_hal_uart.h.22.2b47c8130d845b927904837c0b2264ce
-                           .group:0000000000000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840
+                            *ABS*:00000000 stm32f4xx_hal_tim_ex.c
+                           .group:00000000 wm4.0.09ce1de113943ff5cb4811f1ea7055c3
+                           .group:00000000 wm4.stm32f4xx_hal_conf.h.24.d14dd899dbfa16d6dc9a7b8d5f0b81d2
+                           .group:00000000 wm4.stm32f4xx.h.55.8c995fbadbb7a126747b547eb8ec7b5b
+                           .group:00000000 wm4.stm32f446xx.h.51.16a9122ede9860ebbb552c9e423d1ecd
+                           .group:00000000 wm4.features.h.22.2e382148a0560adabf236cddd4e880f4
+                           .group:00000000 wm4._default_types.h.15.933e8edd27a65e0b69af4a865eb623d2
+                           .group:00000000 wm4._intsup.h.10.35a45952db64d30146faa63a55c20c1c
+                           .group:00000000 wm4._stdint.h.10.f76354baea1c7088202064e6f3d4f5e3
+                           .group:00000000 wm4.stdint.h.23.373a9d32a9e4c2e88fd347156532d281
+                           .group:00000000 wm4.cmsis_version.h.32.4d5822004c01a829a975260e854b5f8e
+                           .group:00000000 wm4.core_cm4.h.66.e4ff136c4a17abc46741866f64f8e729
+                           .group:00000000 wm4.cmsis_gcc.h.26.f42444deefab66ffa141b9b9fddb57a3
+                           .group:00000000 wm4.core_cm4.h.174.059a5e001a9e729091d1407208e93224
+                           .group:00000000 wm4.mpu_armv7.h.32.27b4593cb2f8d3152ca5d97a9d72b321
+                           .group:00000000 wm4.stm32f446xx.h.934.bc7ea77f64b5be5f795628ebc7fc6b73
+                           .group:00000000 wm4.stm32f4xx.h.212.729f0f890654645a3f47ccc0cc2b00e7
+                           .group:00000000 wm4.stm32_hal_legacy.h.23.ef4988de22c7a2f0806a94b08b5606e0
+                           .group:00000000 wm4.stddef.h.39.c744ceb84abf2f8351653f0e2622da1c
+                           .group:00000000 wm4.stm32f4xx_hal_def.h.58.2d2c85d5b9693a63e90566b806e8a752
+                           .group:00000000 wm4.stm32f4xx_hal_rcc_ex.h.22.ed8712e28628f6d35bd6f8847ee2f18f
+                           .group:00000000 wm4.stm32f4xx_hal_rcc.h.108.0c18a3cfc2dd91bdf92470b4bd0ea1b5
+                           .group:00000000 wm4.stm32f4xx_hal_exti.h.22.66e33df8a935c9f8e1682d5515a6c09a
+                           .group:00000000 wm4.stm32f4xx_hal_gpio.h.22.be2c6bcf9722096ea8f49a41bf6aa50c
+                           .group:00000000 wm4.stm32f4xx_hal_gpio_ex.h.22.6858f59ca8a52c645189c74569e4d5b8
+                           .group:00000000 wm4.stm32f4xx_hal_gpio.h.264.528537eb92c2ec5c1cd9dfb4d255d1da
+                           .group:00000000 wm4.stm32f4xx_hal_dma.h.22.fffce20ac9119c50557659c75e75ab1c
+                           .group:00000000 wm4.stm32f4xx_hal_dma.h.721.a1e57ffbc615f926e6509c5acc65e492
+                           .group:00000000 wm4.stm32f4xx_hal_cortex.h.22.e6aa3b847b5388be63c32d1f9e696ef7
+                           .group:00000000 wm4.stm32f4xx_hal_flash.h.22.31b301be2655c3eb8583e51c8231544a
+                           .group:00000000 wm4.stm32f4xx_hal_flash_ex.h.22.df74a74dd40656a7fcd7d90cedd190b4
+                           .group:00000000 wm4.stm32f4xx_hal_flash.h.363.51efdf0f6c88f683efb89d7cc95cc1be
+                           .group:00000000 wm4.stm32f4xx_hal_pwr.h.22.2c27d93ae187efe3a73816f03a329970
+                           .group:00000000 wm4.stm32f4xx_hal_pwr_ex.h.22.cf49f655fb514fa1eda6a251fa1b2f1a
+                           .group:00000000 wm4.stm32f4xx_hal_pwr.h.337.60b43975c84527a23cb6994b23165a5e
+                           .group:00000000 wm4.stm32f4xx_hal_uart.h.22.2b47c8130d845b927904837c0b2264ce
+                           .group:00000000 wm4.stm32f4xx_hal.h.72.a5a58188aa461a0614f1e58e159c7840
 
 NO UNDEFINED SYMBOLS

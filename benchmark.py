@@ -16,9 +16,9 @@ ser.isOpen()
 
 
 
-#SLEEPING_TIME = 0.03  # SL 1
+SLEEPING_TIME = 0.03  # SL 1
 #SLEEPING_TIME = 0.09  # SL 2-3
-SLEEPING_TIME = 0.9 #0.27  # SL 4-5
+#SLEEPING_TIME = 0.9 #0.27  # SL 4-5
 
 # extract seeds
 with open("./KAT/PQCkem-ephKAT_24_2.rsp", "r") as f:

@@ -1,208 +1,98 @@
-Benchmark
+Benchmark @ 84 MHz
 
 
 
     SL = 1      N0 = 2
 KEY GENERATION
-	mean is 505640199
+	mean is 505640199 (6,020 s)
 	variance is 13547226303580
 ENCRYPTION
-	mean is 13632094
+	mean is 13632094 (0,162 s)
 	variance is 18010600567
 DECRYPTION
-	mean is 41872677
+	mean is 41872677 (0,498 s)
 	variance is 1317614629392363
 
     SL = 1      N0 = 3
 KEY GENERATION
-	mean is 160320752
+	mean is 160320752 (1,909 s)
 	variance is 1317717756737
 ENCRYPTION
-	mean is 11576202
+	mean is 11576202 (0,138 s)
 	variance is 11930640343
 DECRYPTION
-	mean is 45813839
+	mean is 45813839 (0,545 s)
 	variance is 491051248025722
     
     SL = 1    N0 = 4
 KEY GENERATION
-	mean is 146052196
+	mean is 146052196 (1,739 s)
 	variance is 22992892313246
 ENCRYPTION
-	mean is 14642818
+	mean is 14642818 (0,174 s)
 	variance is 15903771144
 DECRYPTION
-	mean is 60450501
+	mean is 60450501 (0,720 s)
 	variance is 2612959190078786
 
 
 
     SL = 2    N0 = 2
 KEY GENERATION
-	mean is 1380245583
+	mean is 1380245583 (16,431 s)
 	variance is 42048000371884
 ENCRYPTION
-	mean is 30041050
+	mean is 30041050 (0,358 s)
 	variance is 23473081246
 DECRYPTION
-	mean is 97268883
+	mean is 97268883 (1,158 s)
 	variance is 1994826282263689
 
     SL = 2    N0 = 3
 KEY GENERATION
-	mean is 569318660
+	mean is 569318660 (6,778 s)
 	variance is 6345745438084
 ENCRYPTION
-	mean is 29167084
+	mean is 29167084 (0,347 s)
 	variance is 20060834066
 DECRYPTION
-	mean is 99197784
+	mean is 99197784 (1,181 s)
 	variance is 94210449870950
  
     SL = 2    N0 = 4
 KEY GENERATION
-	mean is 484646815
+	mean is 484646815 (5,770 s)
 	variance is 938572386052853
 ENCRYPTION
-	mean is 36113652
+	mean is 36113652 (0,430 s)
 	variance is 26592988311
 DECRYPTION
-	mean is 150842593
+	mean is 150842593 (1,796 s)
 	variance is 16556913242935094
 
 
 
     SL = 4    N0 = 2
 KEY GENERATION
-	mean is 2754514735
+	mean is 2754514735 (32,792 s)
 	variance is 113851716001287
 ENCRYPTION
-	mean is 52434309
+	mean is 52434309 (0,624 s)
 	variance is 56288960154
 DECRYPTION
-	mean is 161521743
+	mean is 161521743 (1,923 s)
 	variance is 1704213292524664
 
     SL = 4    N0 = 3
 KEY GENERATION
-	mean is 1568026098
+	mean is 1568026098 (18,667 s)
 	variance is 51630191077802
 ENCRYPTION
-	mean is 65182351
+	mean is 65182351 (0,776 s)
 	variance is 64455058814
 DECRYPTION
-	mean is 210724694
+	mean is 210724694 (2,509 s)
 	variance is 342940125426086
 
-a quanto pare, su ARM con SL = 4 e N0 = 4 la decryption CRASHA, e il crahs sembra avvenire dentor la funzione bfdecoding, quando fai gf2xcopy in realta' l'assembly fa due memcpy che sembrano spaccare tutto
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-    
-    
-    
-    
-    
-
-
-
-
-    
-
-
-
-
-
-
-
-
-    SL = 1    N0 = 2
-KEY GENERATION
-	mean is 505530561
-	variance is 2147483647
-ENCRYPTION
-	mean is 13633339
-	variance is 621087333
-DECRYPTION
-	mean is 41876760
-	variance is 2147483647
-    
-    SL = 1    N0 = 3
-KEY GENERATION
-	mean is 160320702
-	variance is 2147483647
-ENCRYPTION
-	mean is 11574757
-	variance is 411201065
-DECRYPTION
-	mean is 45815985
-	variance is 2147483647
-    
-    SL = 1    N0 = 4
-KEY GENERATION
-	mean is 146052341
-	variance is 2147483647
-ENCRYPTION
-	mean is 14632880
-	variance is 538270627
-DECRYPTION
-	mean is 60452175
-	variance is 2147483647
-
-
-
-    SL = 2    N0 = 2
-KEY GENERATION
-	mean is 1381875641
-	variance is 2147483647
-ENCRYPTION
-	mean is 30043674
-	variance is 810245111
-DECRYPTION
-	mean is 97271695
-	variance is 2147483647
-    
-    SL = 2    N0 = 3
-KEY GENERATION
-	mean is 569262407
-	variance is 2147483647
-ENCRYPTION
-	mean is 29172399
-	variance is 707394056
-DECRYPTION
-	mean is 99196409
-	variance is 2147483647
-    
-    SL = 2    N0 = 4
-KEY GENERATION
-	mean is 482986884
-	variance is 2147483647
-ENCRYPTION
-	mean is 36193509
-	variance is 1049337381
-DECRYPTION
-	mean is 151236203
-	variance is 2147483647
-    
