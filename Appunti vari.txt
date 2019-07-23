@@ -1,0 +1,56 @@
+Per generare il codice del progetto: CubeMX con opzione Makefile (compili con make e arm-none-eabi-gcc)
+
+Per leggere la seriale:
+    sudo screen /dev/ttyACM0 115200
+
+Per ottenere libkeccak, serve installato xsltproc:
+    git clone https://github.com/gvanas/KeccakCodePackage.git
+    make | grep libkeccak
+    make reference/libkeccak.a
+Qui ti genera libkeccak.a e la cartella degli header
+
+Per debuggare, installa OpenOCD dai sorgenti https://github.com/ntfreak/openocd
+    openocd -f tcl/board/st_nucleo_f4.cfg
+Su arm-none-eabi-gdb:
+    target remote :3333
+    file ./build/LEDAtest.elf
+    monitor reset halt
+
+
+
+Punti svolti:
+1) Generato uno stub di codice con CubeMX e la porta seriale abilitata
+2) Compilato libkeccak
+    Dentro ToTargetMakefile.xsl modifica:
+        MAKE ?= gmake
+        CC = arm-none-eabi-gcc
+        AR = arm-none-eabi-ar
+    Dentro bin/.build/Makefile.expanded modifica:
+        <h>lib/common/brg_endian.h</h>
+        <gcc>-fomit-frame-pointer</gcc>
+        <gcc>-O2</gcc>
+        <gcc>-g0</gcc>
+        <gcc>-mcpu=cortex-m4</gcc>
+        <gcc>-mthumb</gcc>
+        <gcc>-mfpu=fpv4-sp-d16</gcc>
+        <gcc>-mfloat-abi=softfp</gcc>
+    Compila con "make reference/libkeccak.a"
+    Ottieni libkeccak.a e libkeccak.a.headers, da copiare dentro LEDAkem/include
+3) Compilato LEDAcrypt con i parametri necessari
+    Modifica il Makefile per LEDAcrypt: inserisci arm-none-eabi-gcc, flag per il processore, -std=c11, CPU_WORD_BITS=32
+        CC = arm-none-eabi-gcc 
+
+        CFLAGS = -DCATEGORY=$(SL) -DN0=$(N0) -DCPU_WORD_BITS=32 \
+                 -std=c11 -Wall -pedantic -Wmaybe-uninitialized -Wuninitialized \
+                 -O3 -g3 -mcpu=cortex-m4 -mthumb -mfpu=fpv4-sp-d16 -mfloat-abi=softfp \
+                 --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lm -lrdimon -lnosys -Wl,--end-group
+        LDFLAGS = -lm -lkeccak
+        INCLUDES = -I./include -I./include/libkeccak.a.headers
+        SRCDIR = library
+        OBJDIR = bin
+4) Modificato il makefile di CubeMX per inserirci le librerie, cambiato la FPU da hard a soft, inserito i parametri di LEDAcrypt
+5) Creati due main e due script Python per testare i KAT e svolgere i benchmark
+6) Nella libreria i file modificati sono
+    - gf2x_xPplusOne.h: definizioni di due nuove costanti (NUM_DIGITS_GF2X_ELEMENT_REFERENCE e PADDING_LENGTH)
+    - api.h: prototipi di due nuove funzioni, modificate le lunghezze degli array
+    - kem.c: implementate quelle due funzioni, necessarie per generare uno shared secret su ARM uguale a quello previsto su x64

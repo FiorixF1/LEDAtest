@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for i in 1 2 4
+for i in 1 3 5
 do
     for j in 2 3 4
     do
